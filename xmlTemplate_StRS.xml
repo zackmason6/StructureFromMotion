@@ -1,0 +1,1597 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmi:MI_Metadata xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:gmi="http://www.isotc211.org/2005/gmi" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:gsr="http://www.isotc211.org/2005/gsr" xmlns:gss="http://www.isotc211.org/2005/gss" xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmi https://data.noaa.gov/resources/iso19139/schema.xsd" uuid="[*UUID*]">
+	<gmd:fileIdentifier>
+		<gco:CharacterString>[*FileIdentifier*]</gco:CharacterString>
+	</gmd:fileIdentifier>
+	<gmd:language>
+		<gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/php/code_list.php" codeListValue="eng">eng</gmd:LanguageCode>
+	</gmd:language>
+	<gmd:characterSet>
+		<gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="UTF8">UTF8</gmd:MD_CharacterSetCode>
+	</gmd:characterSet>
+	<gmd:parentIdentifier>
+		<gmx:Anchor xlink:href="[*parent metadata landing page link or DOI link*]" xlink:title="Parent Metadata">[*parent metadata ID*]</gmx:Anchor>
+	</gmd:parentIdentifier>
+	<gmd:hierarchyLevel>
+		<gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+	</gmd:hierarchyLevel>
+	<gmd:hierarchyLevelName>
+		<gco:CharacterString>Granule</gco:CharacterString>
+	</gmd:hierarchyLevelName>
+	<gmd:contact xlink:title=">DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce">
+		<gmd:CI_ResponsibleParty uuid="C4AB0C2676C403438F1441AF80FC7CF4">
+			<gmd:organisationName>
+				<gco:CharacterString>DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce</gco:CharacterString>
+			</gmd:organisationName>
+			<gmd:positionName>
+				<gco:CharacterString>Data Officer</gco:CharacterString>
+			</gmd:positionName>
+			<gmd:contactInfo>
+				<gmd:CI_Contact>
+					<gmd:phone>
+						<gmd:CI_Telephone>
+							<gmd:voice>
+								<gco:CharacterString>301-713-3277</gco:CharacterString>
+							</gmd:voice>
+							<gmd:facsimile>
+								<gco:CharacterString>301-713-3300</gco:CharacterString>
+							</gmd:facsimile>
+						</gmd:CI_Telephone>
+					</gmd:phone>
+					<gmd:address>
+						<gmd:CI_Address>
+							<gmd:deliveryPoint>
+								<gco:CharacterString>Federal Building 151 Patton Avenue</gco:CharacterString>
+							</gmd:deliveryPoint>
+							<gmd:city>
+								<gco:CharacterString>Asheville</gco:CharacterString>
+							</gmd:city>
+							<gmd:administrativeArea>
+								<gco:CharacterString>NC</gco:CharacterString>
+							</gmd:administrativeArea>
+							<gmd:postalCode>
+								<gco:CharacterString>28801-5001</gco:CharacterString>
+							</gmd:postalCode>
+							<gmd:country>
+								<gco:CharacterString>USA</gco:CharacterString>
+							</gmd:country>
+							<gmd:electronicMailAddress>
+								<gco:CharacterString>ncei.info@noaa.gov</gco:CharacterString>
+							</gmd:electronicMailAddress>
+						</gmd:CI_Address>
+					</gmd:address>
+					<gmd:onlineResource>
+						<gmd:CI_OnlineResource>
+							<gmd:linkage>
+								<gmd:URL>https://www.ncei.noaa.gov/</gmd:URL>
+							</gmd:linkage>
+							<gmd:protocol>
+								<gco:CharacterString>HTTPS</gco:CharacterString>
+							</gmd:protocol>
+							<gmd:applicationProfile>
+								<gco:CharacterString>Standard Internet browser</gco:CharacterString>
+							</gmd:applicationProfile>
+							<gmd:name>
+								<gco:CharacterString>NOAA National Centers for Environmental Information website</gco:CharacterString>
+							</gmd:name>
+							<gmd:description>
+								<gco:CharacterString>Main NCEI website providing links to access data and data services.</gco:CharacterString>
+							</gmd:description>
+							<gmd:function>
+								<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+							</gmd:function>
+						</gmd:CI_OnlineResource>
+					</gmd:onlineResource>
+				</gmd:CI_Contact>
+			</gmd:contactInfo>
+			<gmd:role>
+				<gmd:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+			</gmd:role>
+		</gmd:CI_ResponsibleParty>
+	</gmd:contact>
+	<gmd:dateStamp>
+		<gco:Date>[*Date*]</gco:Date>
+	</gmd:dateStamp>
+	<gmd:metadataStandardName>
+		<gco:CharacterString>ISO 19115-2 Geographic Information - Metadata Part 2 Extensions for imagery and gridded data</gco:CharacterString>
+	</gmd:metadataStandardName>
+	<gmd:metadataStandardVersion>
+		<gco:CharacterString>ISO 19115-2:2009(E)</gco:CharacterString>
+	</gmd:metadataStandardVersion>
+	<gmd:identificationInfo>
+		<gmd:MD_DataIdentification>
+			<gmd:citation>
+				<gmd:CI_Citation>
+					<gmd:title>
+						<gco:CharacterString>National Coral Reef Monitoring Program: Structure from motion (SfM) Benthic Images collected at the Stratified Random Site [*SiteName*] around [*IslandName*] in [*Region*] on [*SurveyDate*]	 
+				  </gco:CharacterString>
+					</gmd:title>
+					<gmd:alternateTitle>
+						<gco:CharacterString>NCRMP: SfM Benthic Images at site [*SiteName*]</gco:CharacterString>
+					</gmd:alternateTitle>
+					<gmd:date>
+						<gmd:CI_Date>
+							<gmd:date>
+								<gco:Date>[*SurveyDate*]</gco:Date>
+							</gmd:date>
+							<gmd:dateType>
+								<gmd:CI_DateTypeCode codeList="http://www.isotc211.org/2005/resources/codeList.xml#CI_DateTypeCode" codeListValue="creation">creation</gmd:CI_DateTypeCode>
+							</gmd:dateType>
+						</gmd:CI_Date>
+					</gmd:date>
+					<gmd:identifier>
+						<gmd:MD_Identifier>
+							<gmd:code>
+								<gco:CharacterString>[*SfMSiteFileName*]</gco:CharacterString>
+							</gmd:code>
+						</gmd:MD_Identifier>
+					</gmd:identifier>
+					<gmd:citedResponsibleParty>
+						<gmd:CI_ResponsibleParty>
+							<gmd:organisationName>
+								<gco:CharacterString>Pacific Islands Fisheries Science Center</gco:CharacterString>
+							</gmd:organisationName>
+							<gmd:contactInfo>
+								<gmd:CI_Contact>
+									<gmd:phone>
+										<gmd:CI_Telephone>
+											<gmd:voice>
+												<gco:CharacterString>808-725-5360</gco:CharacterString>
+											</gmd:voice>
+										</gmd:CI_Telephone>
+									</gmd:phone>
+									<gmd:address>
+										<gmd:CI_Address>
+											<gmd:deliveryPoint>
+												<gco:CharacterString>1845 Wasp Blvd.</gco:CharacterString>
+											</gmd:deliveryPoint>
+											<gmd:city>
+												<gco:CharacterString>Honolulu</gco:CharacterString>
+											</gmd:city>
+											<gmd:administrativeArea>
+												<gco:CharacterString>HI</gco:CharacterString>
+											</gmd:administrativeArea>
+											<gmd:postalCode>
+												<gco:CharacterString>96818</gco:CharacterString>
+											</gmd:postalCode>
+											<gmd:country gco:nilReason="missing"/>
+											<gmd:electronicMailAddress>
+												<gco:CharacterString>pifsc.info@noaa.gov</gco:CharacterString>
+											</gmd:electronicMailAddress>
+										</gmd:CI_Address>
+									</gmd:address>
+									<gmd:onlineResource>
+										<gmd:CI_OnlineResource>
+											<gmd:linkage>
+												<gmd:URL>https://www.pifsc.noaa.gov</gmd:URL>
+											</gmd:linkage>
+											<gmd:protocol>
+												<gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+											</gmd:protocol>
+											<gmd:name>
+												<gco:CharacterString>Pacific Island Fisheries Science Center</gco:CharacterString>
+											</gmd:name>
+											<gmd:description>
+												<gco:CharacterString>Pacific Island Fisheries Science Center homepage
+</gco:CharacterString>
+											</gmd:description>
+											<gmd:function>
+												<gmd:CI_OnLineFunctionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+											</gmd:function>
+										</gmd:CI_OnlineResource>
+									</gmd:onlineResource>
+									<gmd:hoursOfService>
+										<gco:CharacterString>8:00 a.m. - 4:30 p.m.</gco:CharacterString>
+									</gmd:hoursOfService>
+								</gmd:CI_Contact>
+							</gmd:contactInfo>
+							<gmd:role>
+								<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:CI_RoleCode" codeListValue="originator">originator</gmd:CI_RoleCode>
+							</gmd:role>
+						</gmd:CI_ResponsibleParty>
+					</gmd:citedResponsibleParty>
+					
+					<gmd:presentationForm>
+						<gmd:CI_PresentationFormCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="imageDigital">imageDigital</gmd:CI_PresentationFormCode>
+					</gmd:presentationForm>
+				</gmd:CI_Citation>
+			</gmd:citation>
+			<gmd:abstract>
+				<gco:CharacterString>The data described here are Structure from Motion (SfM) benthic habitat imagery from benthic transect surveys conducted at stratified random sites by the Pacific Islands Fisheries Science Center (PIFSC) Ecosystem Sciences Division (ESD)--formerly the Coral Reef Ecosystem Division--as part of the NOAA National Coral Reef Monitoring Program (NCRMP). The SfM surveys replicates the visual  Rapid Ecological Assessment (REA) survey methodology for corals conducted during ESD-led NCRMP missions across the Pacific Ocean beginning in 2019.
+
+A stratified random sampling (StRS) design was employed to survey the coral reef ecosystems across the U.S. Pacific Regions (Hawaiian Archipelago, Mariana Archipelago, American Samoa, and the Pacific Remote Island Areas). The survey domain encompassed the majority of the mapped area of reef and hard bottom habitats in the 0-30 m depth range. The stratification scheme included island, sub-island sector, reef zone, and depth in all regions, as well as habitat structure type in the [*Region*]. Allocation of sampling effort was proportional to strata area and variance in coral density. The StRS design effectively reduces estimate variance by sampling more sites with larger hardbottom area and variance. Therefore, site-level analyses should be employed with caution.
+
+Sites were imaged using underwater cameras along 3x20m (3x13m for sites deeper than 18m) transects to extract data for two coral life stages (juveniles, adults) across the [*Region*] in [*Year*]. Adult colony surveys record taxon (genus or species), morphology, colony size, partial mortality in two categories - old dead and recent dead, cause of recent dead partial mortality, and non-lesion forming condition including bleaching and disease. These data are used to calculate density, size distributions, average partial mortality and prevalence and mean severity of coral health conditions. Juvenile colony surveys include taxon (genus or species), morphology and size, and are used to calculate juvenile density and size distributions by taxon. This data is archived separately within NCEI.
+
+This archival package contains imagery from [*SiteName*] that was obtained around [*IslandName*] on [*SurveyDate*]
+
+</gco:CharacterString>
+			</gmd:abstract>
+			<gmd:purpose>
+				<gco:CharacterString>The National Coral Reef Monitoring Program (NCRMP) details a long-term approach to provide an ecosystem perspective via monitoring climate, fish, benthic, and socioeconomic variables in a consistent and integrated manner. The NCRMP coordinates various Coral Reef Conservation Coral Reef Program (CRCP) biological, physical, and human dimensions activities into a cohesive NOAA-wide effort. Through the implementation of the NCRMP, NOAA is able to clearly and concisely communicate results of national-scale monitoring to national, state, and territorial policy makers, resource managers, and the public on a periodic basis.</gco:CharacterString>
+			</gmd:purpose>
+			<gmd:credit>
+				<gco:CharacterString>NOAA Fisheries, Ecosystem Sciences Division and funded by the NOAA Coral Reef Conservation Program</gco:CharacterString>
+			</gmd:credit>
+			<gmd:status>
+				<gmd:MD_ProgressCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_ProgressCode" codeListValue="completed" codeSpace="001">completed</gmd:MD_ProgressCode>
+			</gmd:status>
+			<gmd:pointOfContact>
+				<gmd:CI_ResponsibleParty>
+					<gmd:individualName>
+						<gco:CharacterString>Couch, Courtney S</gco:CharacterString>
+					</gmd:individualName>
+					<gmd:contactInfo>
+						<gmd:CI_Contact>
+							<gmd:phone>
+								<gmd:CI_Telephone>
+									<gmd:voice>
+										<gco:CharacterString>808-725-5507</gco:CharacterString>
+									</gmd:voice>
+								</gmd:CI_Telephone>
+							</gmd:phone>
+							<gmd:address>
+								<gmd:CI_Address>
+									<gmd:deliveryPoint>
+										<gco:CharacterString>1845 Wasp Blvd.</gco:CharacterString>
+									</gmd:deliveryPoint>
+									<gmd:city>
+										<gco:CharacterString>Honolulu</gco:CharacterString>
+									</gmd:city>
+									<gmd:administrativeArea>
+										<gco:CharacterString>HI</gco:CharacterString>
+									</gmd:administrativeArea>
+									<gmd:postalCode>
+										<gco:CharacterString>96818</gco:CharacterString>
+									</gmd:postalCode>
+									<gmd:country>
+										<gco:CharacterString>USA</gco:CharacterString>
+									</gmd:country>
+									<gmd:electronicMailAddress>
+										<gco:CharacterString>courtney.s.couch@noaa.gov</gco:CharacterString>
+									</gmd:electronicMailAddress>
+								</gmd:CI_Address>
+							</gmd:address>
+						</gmd:CI_Contact>
+					</gmd:contactInfo>
+					<gmd:role>
+						<gmd:CI_RoleCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:CI_RoleCode" codeListValue="pointOfContact">pointOfContact</gmd:CI_RoleCode>
+					</gmd:role>
+				</gmd:CI_ResponsibleParty>
+			</gmd:pointOfContact>
+			<gmd:resourceMaintenance>
+				<gmd:MD_MaintenanceInformation>
+					<gmd:maintenanceAndUpdateFrequency>
+						<gmd:MD_MaintenanceFrequencyCode codeList="http://www.tc211.org/ISO19139/resources/codeList.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded">asNeeded</gmd:MD_MaintenanceFrequencyCode>
+					</gmd:maintenanceAndUpdateFrequency>
+				</gmd:MD_MaintenanceInformation>
+			</gmd:resourceMaintenance>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>[*CRCPProjectKeyword*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>[*CRCPProjectNumber*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="project">project</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>CRCP Project</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>Visual Images &gt; Habitats</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>CoRIS Discovery Thesaurus</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>[*CoRISPlaceCountry*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>[*CoRISPlaceOcean*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>[*CoRISPlaceIslandCountry*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>[*CoRISPlaceIslandOcean*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>CoRIS Place Thesaurus</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Biosphere &gt; Aquatic Habitat &gt; Benthic Habitat</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Biosphere &gt; Aquatic Habitat &gt; Reef Habitat</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Biosphere &gt; Zoology &gt; Corals</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Biosphere &gt; Zoology &gt; Corals &gt; Reef Monitoring and Assessment</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Biosphere &gt; Zoology &gt; Corals &gt; Reef Monitoring and Assessment &gt; Benthos Analysis &gt; Transect Monitoring</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Biosphere &gt; Zoology &gt; Corals &gt; Reef Monitoring and Assessment &gt; Photographic Analysis</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Biosphere &gt; Zoology &gt; Corals &gt; Reef monitoring and assessment &gt; Rapid assessment studies</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Bathymetry/Seafloor Topography &gt; Hard Seafloor Substrate</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Coastal Processes &gt; Coral Reefs</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Coastal Processes &gt; Coral Reefs &gt; Coral Reef Ecology</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Coastal Processes &gt; Coral Reefs &gt; Coral Reef Ecology &gt; Benthic biology</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Marine Biology &gt; Coral</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>EARTH SCIENCE &gt; Oceans &gt; Marine Biology &gt; Coral Communities</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>CoRIS Theme Thesaurus</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>images</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>NODC DATA TYPES THESAURUS</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>in situ</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>NODC OBSERVATION TYPES THESAURUS</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>CORAL REEF STUDIES</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Reef Conservation Program</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="project">project</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>NODC PROJECT NAMES THESAURUS</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>US DOC; NOAA; NMFS; Pacific Islands Fisheries Science Center; Ecosystem Sciences Division</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="dataCentre">dataCentre</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>NODC SUBMITTING INSTITUTION NAMES THESAURUS</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>camera</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="instrument">instrument</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>NODC INSTRUMENT TYPES THESAURUS</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>[*KeywordShipName*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="platform">platform</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>NODC PLATFORM NAMES THESAURUS</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>CRED</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>CREP</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Reef Ecosystem Division</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Reef Ecosystem Program</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>ESD</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Ecosystem Sciences Division</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>PIFSC</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Pacific Islands Fisheries Science Center</gco:CharacterString>
+					</gmd:keyword>
+
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="dataCentre">dataCentre</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+									<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Submitter Data Center Keywords</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			
+<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>REA</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Rapid Ecological Assessment</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>SfM</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Structure from Motion</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+									<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Submitter Theme Keywords</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>			
+			
+			
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>Triennial</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="temporal">temporal</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+		
+		
+<gmd:descriptiveKeywords>
+<gmd:MD_Keywords>
+<gmd:keyword>
+<gmx:Anchor xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/086c68e5-1c94-4f2f-89d5-0453443ff249" xlink:actuate="onRequest">DOC/NOAA/NESDIS/NODC > National Oceanographic Data Center, NESDIS, NOAA, U.S. Department of Commerce</gmx:Anchor>
+</gmd:keyword>
+<gmd:keyword>
+						<gco:CharacterString>DOC/NOAA/NMFS/PIFSC &gt; Pacific Islands Fisheries Science Center, National Marine Fisheries Service, NOAA, U.S. Department of Commerce</gco:CharacterString>
+					</gmd:keyword>
+<gmd:keyword>
+<gmx:Anchor xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/e59896e0-3b4d-43ea-9348-f1f456305d05" xlink:actuate="onRequest">DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce</gmx:Anchor>
+</gmd:keyword>
+<gmd:keyword>
+<gmx:Anchor xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/85c2a291-71e2-4b51-811b-e469ed6c065c" xlink:actuate="onRequest">DOC/NOAA/NMFS > National Marine Fisheries Service, NOAA, U.S. Department of Commerce</gmx:Anchor>
+</gmd:keyword>
+<gmd:type>
+<gmd:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="dataCentre">dataCentre</gmd:MD_KeywordTypeCode>
+</gmd:type>
+<gmd:thesaurusName>
+<gmd:CI_Citation>
+<gmd:title>
+<gco:CharacterString>Global Change Master Directory (GCMD) Data Center Keywords</gco:CharacterString>
+</gmd:title>
+<gmd:date>
+<gmd:CI_Date>
+<gmd:date>
+<gco:Date>2022</gco:Date>
+</gmd:date>
+<gmd:dateType>
+<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
+</gmd:dateType>
+</gmd:CI_Date>
+</gmd:date>
+<gmd:edition>
+<gco:CharacterString>14</gco:CharacterString>
+</gmd:edition>
+<gmd:citedResponsibleParty>
+<gmd:CI_ResponsibleParty>
+<gmd:organisationName>
+<gco:CharacterString>Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA)</gco:CharacterString>
+</gmd:organisationName>
+<gmd:contactInfo>
+<gmd:CI_Contact>
+<gmd:address>
+<gmd:CI_Address>
+<gmd:city>
+<gco:CharacterString>Greenbelt</gco:CharacterString>
+</gmd:city>
+<gmd:administrativeArea>
+<gco:CharacterString>MD</gco:CharacterString>
+</gmd:administrativeArea>
+</gmd:CI_Address>
+</gmd:address>
+<gmd:onlineResource>
+<gmd:CI_OnlineResource>
+<gmd:linkage>
+<gmd:URL>https://forum.earthdata.nasa.gov/app.php/tag/GCMD%2BKeywords</gmd:URL>
+</gmd:linkage>
+<gmd:protocol>
+<gco:CharacterString>HTTPS</gco:CharacterString>
+</gmd:protocol>
+<gmd:name>
+<gco:CharacterString>GCMD Keyword Forum Page</gco:CharacterString>
+</gmd:name>
+<gmd:description>
+<gco:CharacterString>Global Change Master Directory (GCMD). 2022. GCMD Keywords, Version 14. Greenbelt, MD: Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA). URL (GCMD Keyword Forum Page): https://forum.earthdata.nasa.gov/app.php/tag/GCMD%2BKeywords</gco:CharacterString>
+</gmd:description>
+<gmd:function>
+<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+</gmd:function>
+</gmd:CI_OnlineResource>
+</gmd:onlineResource>
+</gmd:CI_Contact>
+</gmd:contactInfo>
+<gmd:role>
+<gmd:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+</gmd:role>
+</gmd:CI_ResponsibleParty>
+</gmd:citedResponsibleParty>
+</gmd:CI_Citation>
+</gmd:thesaurusName>
+</gmd:MD_Keywords>
+</gmd:descriptiveKeywords>		
+<gmd:descriptiveKeywords>
+<gmd:MD_Keywords>
+<gmd:keyword>
+<gmx:Anchor xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/03f0c0a3-04a7-4ef8-8ec0-3c2266510815" xlink:actuate="onRequest">EARTH SCIENCE > SPECTRAL/ENGINEERING > VISIBLE WAVELENGTHS > VISIBLE IMAGERY</gmx:Anchor>
+</gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>EARTH SCIENCE &gt; BIOSPHERE &gt; ECOSYSTEMS &gt; MARINE ECOSYSTEMS &gt; BENTHIC</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:keyword>
+                  <gco:CharacterString>EARTH SCIENCE &gt; BIOSPHERE &gt; ECOSYSTEMS &gt; MARINE ECOSYSTEMS &gt; REEF &gt; CORAL REEF</gco:CharacterString>
+               </gmd:keyword>
+
+<gmd:type>
+<gmd:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+</gmd:type>
+<gmd:thesaurusName>
+<gmd:CI_Citation>
+<gmd:title>
+<gco:CharacterString>Global Change Master Directory (GCMD) Science Keywords</gco:CharacterString>
+</gmd:title>
+<gmd:date>
+<gmd:CI_Date>
+<gmd:date>
+<gco:Date>2022</gco:Date>
+</gmd:date>
+<gmd:dateType>
+<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
+</gmd:dateType>
+</gmd:CI_Date>
+</gmd:date>
+<gmd:edition>
+<gco:CharacterString>14</gco:CharacterString>
+</gmd:edition>
+<gmd:citedResponsibleParty>
+<gmd:CI_ResponsibleParty>
+<gmd:organisationName>
+<gco:CharacterString>Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA)</gco:CharacterString>
+</gmd:organisationName>
+<gmd:contactInfo>
+<gmd:CI_Contact>
+<gmd:address>
+<gmd:CI_Address>
+<gmd:city>
+<gco:CharacterString>Greenbelt</gco:CharacterString>
+</gmd:city>
+<gmd:administrativeArea>
+<gco:CharacterString>MD</gco:CharacterString>
+</gmd:administrativeArea>
+</gmd:CI_Address>
+</gmd:address>
+<gmd:onlineResource>
+<gmd:CI_OnlineResource>
+<gmd:linkage>
+<gmd:URL>https://forum.earthdata.nasa.gov/app.php/tag/GCMD%2BKeywords</gmd:URL>
+</gmd:linkage>
+<gmd:protocol>
+<gco:CharacterString>HTTPS</gco:CharacterString>
+</gmd:protocol>
+<gmd:name>
+<gco:CharacterString>GCMD Keyword Forum Page</gco:CharacterString>
+</gmd:name>
+<gmd:description>
+<gco:CharacterString>Global Change Master Directory (GCMD). 2022. GCMD Keywords, Version 14. Greenbelt, MD: Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA). URL (GCMD Keyword Forum Page): https://forum.earthdata.nasa.gov/app.php/tag/GCMD+Keywords</gco:CharacterString>
+</gmd:description>
+<gmd:function>
+<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+</gmd:function>
+</gmd:CI_OnlineResource>
+</gmd:onlineResource>
+</gmd:CI_Contact>
+</gmd:contactInfo>
+<gmd:role>
+<gmd:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+</gmd:role>
+</gmd:CI_ResponsibleParty>
+</gmd:citedResponsibleParty>
+</gmd:CI_Citation>
+</gmd:thesaurusName>
+</gmd:MD_Keywords>
+</gmd:descriptiveKeywords>
+<gmd:descriptiveKeywords>
+<gmd:MD_Keywords>
+<gmd:keyword>
+<gmx:Anchor xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/33de4965-928a-45d5-acfc-79e006842431" xlink:actuate="onRequest">CAMERA > CAMERA</gmx:Anchor>
+</gmd:keyword>
+<gmd:type>
+<gmd:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="instrument">instrument</gmd:MD_KeywordTypeCode>
+</gmd:type>
+<gmd:thesaurusName>
+<gmd:CI_Citation>
+<gmd:title>
+<gco:CharacterString>Global Change Master Directory (GCMD) Instrument Keywords</gco:CharacterString>
+</gmd:title>
+<gmd:date>
+<gmd:CI_Date>
+<gmd:date>
+<gco:Date>2022</gco:Date>
+</gmd:date>
+<gmd:dateType>
+<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
+</gmd:dateType>
+</gmd:CI_Date>
+</gmd:date>
+<gmd:edition>
+<gco:CharacterString>14</gco:CharacterString>
+</gmd:edition>
+<gmd:citedResponsibleParty>
+<gmd:CI_ResponsibleParty>
+<gmd:organisationName>
+<gco:CharacterString>Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA)</gco:CharacterString>
+</gmd:organisationName>
+<gmd:contactInfo>
+<gmd:CI_Contact>
+<gmd:address>
+<gmd:CI_Address>
+<gmd:city>
+<gco:CharacterString>Greenbelt</gco:CharacterString>
+</gmd:city>
+<gmd:administrativeArea>
+<gco:CharacterString>MD</gco:CharacterString>
+</gmd:administrativeArea>
+</gmd:CI_Address>
+</gmd:address>
+<gmd:onlineResource>
+<gmd:CI_OnlineResource>
+<gmd:linkage>
+<gmd:URL>https://forum.earthdata.nasa.gov/app.php/tag/GCMD%2BKeywords</gmd:URL>
+</gmd:linkage>
+<gmd:protocol>
+<gco:CharacterString>HTTPS</gco:CharacterString>
+</gmd:protocol>
+<gmd:name>
+<gco:CharacterString>GCMD Keyword Forum Page</gco:CharacterString>
+</gmd:name>
+<gmd:description>
+<gco:CharacterString>Global Change Master Directory (GCMD). 2022. GCMD Keywords, Version 14. Greenbelt, MD: Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA). URL (GCMD Keyword Forum Page): https://forum.earthdata.nasa.gov/app.php/tag/GCMD+Keywords</gco:CharacterString>
+</gmd:description>
+<gmd:function>
+<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+</gmd:function>
+</gmd:CI_OnlineResource>
+</gmd:onlineResource>
+</gmd:CI_Contact>
+</gmd:contactInfo>
+<gmd:role>
+<gmd:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+</gmd:role>
+</gmd:CI_ResponsibleParty>
+</gmd:citedResponsibleParty>
+</gmd:CI_Citation>
+</gmd:thesaurusName>
+</gmd:MD_Keywords>
+</gmd:descriptiveKeywords>
+
+<gmd:descriptiveKeywords>
+<gmd:MD_Keywords>
+<gmd:keyword>
+<gco:CharacterString>[*GCMD_PlaceKeyword]</gco:CharacterString>
+</gmd:keyword>
+<gmd:type>
+<gmd:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
+</gmd:type>
+<gmd:thesaurusName>
+<gmd:CI_Citation>
+<gmd:title>
+<gco:CharacterString>Global Change Master Directory (GCMD) Location Keywords</gco:CharacterString>
+</gmd:title>
+<gmd:date>
+<gmd:CI_Date>
+<gmd:date>
+<gco:Date>2022</gco:Date>
+</gmd:date>
+<gmd:dateType>
+<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="revision">revision</gmd:CI_DateTypeCode>
+</gmd:dateType>
+</gmd:CI_Date>
+</gmd:date>
+<gmd:edition>
+<gco:CharacterString>14</gco:CharacterString>
+</gmd:edition>
+<gmd:citedResponsibleParty>
+<gmd:CI_ResponsibleParty>
+<gmd:organisationName>
+<gco:CharacterString>Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA)</gco:CharacterString>
+</gmd:organisationName>
+<gmd:contactInfo>
+<gmd:CI_Contact>
+<gmd:address>
+<gmd:CI_Address>
+<gmd:city>
+<gco:CharacterString>Greenbelt</gco:CharacterString>
+</gmd:city>
+<gmd:administrativeArea>
+<gco:CharacterString>MD</gco:CharacterString>
+</gmd:administrativeArea>
+</gmd:CI_Address>
+</gmd:address>
+<gmd:onlineResource>
+<gmd:CI_OnlineResource>
+<gmd:linkage>
+<gmd:URL>https://forum.earthdata.nasa.gov/app.php/tag/GCMD%2BKeywords</gmd:URL>
+</gmd:linkage>
+<gmd:protocol>
+<gco:CharacterString>HTTPS</gco:CharacterString>
+</gmd:protocol>
+<gmd:name>
+<gco:CharacterString>GCMD Keyword Forum Page</gco:CharacterString>
+</gmd:name>
+<gmd:description>
+<gco:CharacterString>Global Change Master Directory (GCMD). 2022. GCMD Keywords, Version 14. Greenbelt, MD: Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA). URL (GCMD Keyword Forum Page): https://forum.earthdata.nasa.gov/app.php/tag/GCMD+Keywords</gco:CharacterString>
+</gmd:description>
+<gmd:function>
+<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+</gmd:function>
+</gmd:CI_OnlineResource>
+</gmd:onlineResource>
+</gmd:CI_Contact>
+</gmd:contactInfo>
+<gmd:role>
+<gmd:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+</gmd:role>
+</gmd:CI_ResponsibleParty>
+</gmd:citedResponsibleParty>
+</gmd:CI_Citation>
+</gmd:thesaurusName>
+</gmd:MD_Keywords>
+</gmd:descriptiveKeywords>		
+			<gmd:resourceConstraints>
+				<gmd:MD_Constraints>
+					<gmd:useLimitation>
+						<gco:CharacterString>Distribution liability: NOAA and NCEI make no warranty, expressed or implied, regarding these data, nor does the fact of distribution constitute such a warranty. NOAA and NCEI cannot assume liability for any damages caused by any errors or omissions in these data. If appropriate, NCEI can only certify that the data it distributes are an authentic copy of the records that were accepted for inclusion in the NCEI archives.</gco:CharacterString>
+					</gmd:useLimitation>
+				</gmd:MD_Constraints>
+			</gmd:resourceConstraints>
+			<gmd:resourceConstraints>
+				<gmd:MD_LegalConstraints>
+					<gmd:accessConstraints>
+						<gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+					</gmd:accessConstraints>
+					<gmd:useConstraints>
+						<gmd:MD_RestrictionCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_RestrictionCode" codeListValue="otherRestrictions">otherRestrictions</gmd:MD_RestrictionCode>
+					</gmd:useConstraints>
+					<gmd:otherConstraints>
+						<gco:CharacterString>Cite this imagery by using the citation from the yearly NCRMP regional mission.  Follow the link to the NCRMP regional mission landing page under the Documentation tab for the citation text.</gco:CharacterString>
+					</gmd:otherConstraints>
+				</gmd:MD_LegalConstraints>
+			</gmd:resourceConstraints>
+				<gmd:aggregationInfo>
+				<gmd:MD_AggregateInformation>
+					<gmd:aggregateDataSetName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>National Coral Reef Monitoring Program: Structure from motion (SfM) Benthic Images collected at the Stratified Random Sites in [*Region*] between [*MissionStartTime*] and [*MissionEndTime*]</gco:CharacterString>
+							</gmd:title>
+							<gmd:date>
+								<gmd:CI_Date>
+									<gmd:date gco:nilReason="missing">
+										
+									</gmd:date>
+									<gmd:dateType>
+										<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication" codeSpace="002">publication</gmd:CI_DateTypeCode>
+									</gmd:dateType>
+								</gmd:CI_Date>
+							</gmd:date>
+							<gmd:citedResponsibleParty>
+								<gmd:CI_ResponsibleParty>
+							
+									<gmd:organisationName>
+										<gco:CharacterString>US DOC; NOAA; NMFS; Pacific Islands Fisheries Science Center; Ecosystem Sciences Division</gco:CharacterString>
+									</gmd:organisationName>
+									<gmd:positionName>
+								
+									</gmd:positionName>
+									<gmd:role>
+										<gmd:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="author">author</gmd:CI_RoleCode>
+									</gmd:role>
+								</gmd:CI_ResponsibleParty>
+							</gmd:citedResponsibleParty>
+							<gmd:citedResponsibleParty>
+								<gmd:CI_ResponsibleParty>
+									<gmd:positionName gco:nilReason="unknown"/>
+									<gmd:contactInfo>
+										<gmd:CI_Contact>
+											<gmd:onlineResource>
+												<gmd:CI_OnlineResource>
+												<gmd:linkage>
+												<gmd:URL>[*parent metadata landing page link or DOI link*]</gmd:URL>
+												</gmd:linkage>
+												</gmd:CI_OnlineResource>
+											</gmd:onlineResource>
+										</gmd:CI_Contact>
+									</gmd:contactInfo>
+									<gmd:role gco:nilReason="unknown"/>
+								</gmd:CI_ResponsibleParty>
+							</gmd:citedResponsibleParty>
+						</gmd:CI_Citation>
+					</gmd:aggregateDataSetName>
+					<gmd:associationType>
+						<gmd:DS_AssociationTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode" codeListValue="largerWorkCitation" codeSpace="002">largerWorkCitation</gmd:DS_AssociationTypeCode>
+					</gmd:associationType>
+				</gmd:MD_AggregateInformation>
+			</gmd:aggregationInfo>
+			
+			
+			<gmd:aggregationInfo>
+				<gmd:MD_AggregateInformation>
+					<gmd:aggregateDataSetName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Comparing Coral Colony Surveys From In-Water Observations and Structure-From-Motion Imagery Shows Low Methodological Bias</gco:CharacterString>
+							</gmd:title>
+							<gmd:date>
+								<gmd:CI_Date>
+									<gmd:date>
+										<gco:Date>2021</gco:Date>
+									</gmd:date>
+									<gmd:dateType>
+										<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+									</gmd:dateType>
+								</gmd:CI_Date>
+							</gmd:date>
+							<gmd:identifier>
+								<gmd:MD_Identifier>
+									<gmd:authority>
+										<gmd:CI_Citation>
+											<gmd:title>
+												<gco:CharacterString>Digital Object Identifier (DOI)</gco:CharacterString>
+											</gmd:title>
+											<gmd:date gco:nilReason="inapplicable"/>
+										</gmd:CI_Citation>
+									</gmd:authority>
+									<gmd:code>
+										<gco:CharacterString>https://doi.org/10.3389/fmars.2021.647943</gco:CharacterString>
+									</gmd:code>
+								</gmd:MD_Identifier>
+							</gmd:identifier>
+							<gmd:citedResponsibleParty>
+								<gmd:CI_ResponsibleParty>
+									<gmd:positionName gco:nilReason="unknown"/>
+									<gmd:contactInfo>
+										<gmd:CI_Contact>
+											<gmd:onlineResource>
+												<gmd:CI_OnlineResource>
+													<gmd:linkage>
+														<gmd:URL>https://doi.org/10.3389/fmars.2021.647943</gmd:URL>
+													</gmd:linkage>
+													<gmd:protocol>
+														<gco:CharacterString>HTTPS</gco:CharacterString>
+													</gmd:protocol>
+													<gmd:name>
+														<gco:CharacterString>Comparing Coral Colony Surveys From In-Water Observations and Structure-From-Motion Imagery Shows Low Methodological Bias</gco:CharacterString>
+													</gmd:name>
+													<gmd:description>
+														<gco:CharacterString>Couch CS, Oliver TA, Suka R, Lamirand M, Asbury M, Amir C, Vargas-Angel B, Winston M, Huntington B, Lichowski F, Halperin A, Gray A, Garriques J, Samson J. 2021. Comparing Coral Colony Surveys From In-Water Observations and Structure-From-Motion Imagery Shows Low Methodological Bias. Front. Mar. Sci. 8:647943. doi: 10.3389/fmars.2021.647943</gco:CharacterString>
+													</gmd:description>
+													<gmd:function>
+														<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+													</gmd:function>
+												</gmd:CI_OnlineResource>
+											</gmd:onlineResource>
+										</gmd:CI_Contact>
+									</gmd:contactInfo>
+									<gmd:role gco:nilReason="unknown"/>
+								</gmd:CI_ResponsibleParty>
+							</gmd:citedResponsibleParty>
+							<gmd:presentationForm>
+								<gmd:CI_PresentationFormCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="documentDigital">documentDigital</gmd:CI_PresentationFormCode>
+							</gmd:presentationForm>
+						</gmd:CI_Citation>
+					</gmd:aggregateDataSetName>
+					<gmd:associationType>
+						<gmd:DS_AssociationTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode" codeListValue="crossReference">crossReference</gmd:DS_AssociationTypeCode>
+					</gmd:associationType>
+				</gmd:MD_AggregateInformation>
+			</gmd:aggregationInfo>
+			<gmd:aggregationInfo>
+				<gmd:MD_AggregateInformation>
+					<gmd:aggregateDataSetName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Integrating structure-from-motion photogrammetry with geospatial software as a novel technique for quantifying 3D ecological characteristics of coral reefs</gco:CharacterString>
+							</gmd:title>
+							<gmd:date>
+								<gmd:CI_Date>
+									<gmd:date>
+										<gco:Date>2015</gco:Date>
+									</gmd:date>
+									<gmd:dateType>
+										<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+									</gmd:dateType>
+								</gmd:CI_Date>
+							</gmd:date>
+							<gmd:identifier>
+								<gmd:MD_Identifier>
+									<gmd:authority>
+										<gmd:CI_Citation>
+											<gmd:title>
+												<gco:CharacterString>Digital Object Identifier (DOI)</gco:CharacterString>
+											</gmd:title>
+											<gmd:date gco:nilReason="inapplicable"/>
+										</gmd:CI_Citation>
+									</gmd:authority>
+									<gmd:code>
+										<gco:CharacterString>https://doi.org/10.7717/peerj.1077</gco:CharacterString>
+									</gmd:code>
+								</gmd:MD_Identifier>
+							</gmd:identifier>
+							<gmd:citedResponsibleParty>
+								<gmd:CI_ResponsibleParty>
+									<gmd:positionName gco:nilReason="unknown"/>
+									<gmd:contactInfo>
+										<gmd:CI_Contact>
+											<gmd:onlineResource>
+												<gmd:CI_OnlineResource>
+													<gmd:linkage>
+														<gmd:URL>https://doi.org/10.7717/peerj.1077</gmd:URL>
+													</gmd:linkage>
+													<gmd:protocol>
+														<gco:CharacterString>HTTPS</gco:CharacterString>
+													</gmd:protocol>
+													<gmd:name>
+														<gco:CharacterString>Integrating structure-from-motion photogrammetry with geospatial software as a novel technique for quantifying 3D ecological characteristics of coral reefs</gco:CharacterString>
+													</gmd:name>
+													<gmd:description>
+														<gco:CharacterString>Burns J, Delparte D, Gates R, Takabayashi M. 2015. Integrating structure-from-motion photogrammetry with geospatial software as a novel technique for quantifying 3D ecological characteristics of coral reefs. PeerJ 3:e1077</gco:CharacterString>
+													</gmd:description>
+													<gmd:function>
+														<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+													</gmd:function>
+												</gmd:CI_OnlineResource>
+											</gmd:onlineResource>
+										</gmd:CI_Contact>
+									</gmd:contactInfo>
+									<gmd:role gco:nilReason="unknown"/>
+								</gmd:CI_ResponsibleParty>
+							</gmd:citedResponsibleParty>
+							<gmd:presentationForm>
+								<gmd:CI_PresentationFormCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="documentDigital">documentDigital</gmd:CI_PresentationFormCode>
+							</gmd:presentationForm>
+						</gmd:CI_Citation>
+					</gmd:aggregateDataSetName>
+					<gmd:associationType>
+						<gmd:DS_AssociationTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode" codeListValue="crossReference">crossReference</gmd:DS_AssociationTypeCode>
+					</gmd:associationType>
+				</gmd:MD_AggregateInformation>
+			</gmd:aggregationInfo>
+			<gmd:aggregationInfo>
+				<gmd:MD_AggregateInformation>
+					<gmd:aggregateDataSetName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Processing Photomosaic Imagery of Coral Reefs Using Structure-from-Motion Standard Operating Procedures</gco:CharacterString>
+							</gmd:title>
+							<gmd:date>
+								<gmd:CI_Date>
+									<gmd:date>
+										<gco:Date>2019</gco:Date>
+									</gmd:date>
+									<gmd:dateType>
+										<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+									</gmd:dateType>
+								</gmd:CI_Date>
+							</gmd:date>
+							<gmd:identifier>
+								<gmd:MD_Identifier>
+									<gmd:authority>
+										<gmd:CI_Citation>
+											<gmd:title>
+												<gco:CharacterString>Digital Object Identifier (DOI)</gco:CharacterString>
+											</gmd:title>
+											<gmd:date gco:nilReason="inapplicable"/>
+										</gmd:CI_Citation>
+									</gmd:authority>
+									<gmd:code>
+										<gco:CharacterString>https://doi.org/10.25923/h2q8-jv47</gco:CharacterString>
+									</gmd:code>
+								</gmd:MD_Identifier>
+							</gmd:identifier>
+							<gmd:citedResponsibleParty>
+								<gmd:CI_ResponsibleParty>
+									<gmd:positionName gco:nilReason="unknown"/>
+									<gmd:contactInfo>
+										<gmd:CI_Contact>
+											<gmd:onlineResource>
+												<gmd:CI_OnlineResource>
+													<gmd:linkage>
+														<gmd:URL>https://doi.org/10.25923/h2q8-jv47</gmd:URL>
+													</gmd:linkage>
+													<gmd:protocol>
+														<gco:CharacterString>HTTPS</gco:CharacterString>
+													</gmd:protocol>
+													<gmd:name>
+														<gco:CharacterString>Processing Photomosaic Imagery of Coral Reefs Using Structure-from-Motion Standard Operating Procedures</gco:CharacterString>
+													</gmd:name>
+													<gmd:description>
+														<gco:CharacterString>Suka R, Asbury M, Couch C, Gray A, Winston M, Oliver T. 2019. Processing Photomosaic Imagery of Coral Reefs Using Structure-from-Motion Standard Operating Procedures.  U.S. Dept. of Commerce, NOAA Technical Memorandum NOAA-TM-NMFS-PIFSC-93, 54 p. doi:10.25923/h2q8-jv47</gco:CharacterString>
+													</gmd:description>
+													<gmd:function>
+														<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+													</gmd:function>
+												</gmd:CI_OnlineResource>
+											</gmd:onlineResource>
+										</gmd:CI_Contact>
+									</gmd:contactInfo>
+									<gmd:role gco:nilReason="unknown"/>
+								</gmd:CI_ResponsibleParty>
+							</gmd:citedResponsibleParty>
+							<gmd:presentationForm>
+								<gmd:CI_PresentationFormCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="documentDigital">documentDigital</gmd:CI_PresentationFormCode>
+							</gmd:presentationForm>
+						</gmd:CI_Citation>
+					</gmd:aggregateDataSetName>
+					<gmd:associationType>
+						<gmd:DS_AssociationTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode" codeListValue="crossReference">crossReference</gmd:DS_AssociationTypeCode>
+					</gmd:associationType>
+				</gmd:MD_AggregateInformation>
+			</gmd:aggregationInfo>
+			<gmd:aggregationInfo>
+				<gmd:MD_AggregateInformation>
+					<gmd:aggregateDataSetName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Ecosystem Sciences Division Standard Operating Procedures: Data Collection for Rapid Ecological Assessment Benthic Surveys</gco:CharacterString>
+							</gmd:title>
+							<gmd:date>
+								<gmd:CI_Date>
+									<gmd:date>
+										<gco:Date>2020</gco:Date>
+									</gmd:date>
+									<gmd:dateType>
+										<gmd:CI_DateTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode" codeListValue="publication">publication</gmd:CI_DateTypeCode>
+									</gmd:dateType>
+								</gmd:CI_Date>
+							</gmd:date>
+							<gmd:identifier>
+								<gmd:MD_Identifier>
+									<gmd:authority>
+										<gmd:CI_Citation>
+											<gmd:title>
+												<gco:CharacterString>Digital Object Identifier (DOI)</gco:CharacterString>
+											</gmd:title>
+											<gmd:date gco:nilReason="inapplicable"/>
+										</gmd:CI_Citation>
+									</gmd:authority>
+									<gmd:code>
+										<gco:CharacterString>https://doi.org/10.25923/ws5s-km69</gco:CharacterString>
+									</gmd:code>
+								</gmd:MD_Identifier>
+							</gmd:identifier>
+							<gmd:citedResponsibleParty>
+								<gmd:CI_ResponsibleParty>
+									<gmd:positionName gco:nilReason="unknown"/>
+									<gmd:contactInfo>
+										<gmd:CI_Contact>
+											<gmd:onlineResource>
+												<gmd:CI_OnlineResource>
+													<gmd:linkage>
+														<gmd:URL>https://doi.org/10.25923/ws5s-km69</gmd:URL>
+													</gmd:linkage>
+													<gmd:protocol>
+														<gco:CharacterString>HTTPS</gco:CharacterString>
+													</gmd:protocol>
+													<gmd:name>
+														<gco:CharacterString>Ecosystem Sciences Division Standard Operating Procedures: Data Collection for Rapid Ecological Assessment Benthic Surveys</gco:CharacterString>
+													</gmd:name>
+													<gmd:description>
+														<gco:CharacterString>Winston M, Couch C, Huntington B, Vargas-Angel B. 2020. Ecosystem Sciences Division Standard Operating Procedures: Data Collection for Rapid Ecological Assessment Benthic Surveys: 2019 update. U.S. Dept. of Commerce, NOAA Technical Memorandum NOAA-TM-NMFS-PIFSC-96, 56 p. https://doi.org/10.25923/ws5s-km69</gco:CharacterString>
+													</gmd:description>
+													<gmd:function>
+														<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+													</gmd:function>
+												</gmd:CI_OnlineResource>
+											</gmd:onlineResource>
+										</gmd:CI_Contact>
+									</gmd:contactInfo>
+									<gmd:role gco:nilReason="unknown"/>
+								</gmd:CI_ResponsibleParty>
+							</gmd:citedResponsibleParty>
+							<gmd:presentationForm>
+								<gmd:CI_PresentationFormCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode" codeListValue="documentDigital">documentDigital</gmd:CI_PresentationFormCode>
+							</gmd:presentationForm>
+						</gmd:CI_Citation>
+					</gmd:aggregateDataSetName>
+					<gmd:associationType>
+						<gmd:DS_AssociationTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode" codeListValue="crossReference">crossReference</gmd:DS_AssociationTypeCode>
+					</gmd:associationType>
+				</gmd:MD_AggregateInformation>
+			</gmd:aggregationInfo>
+			<gmd:language>
+				<gco:CharacterString>eng; US</gco:CharacterString>
+			</gmd:language>
+			<gmd:topicCategory>
+				<gmd:MD_TopicCategoryCode>environment</gmd:MD_TopicCategoryCode>
+			</gmd:topicCategory>
+			         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>imageryBaseMapsEarthCover</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>oceans</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+			<gmd:environmentDescription>
+				<gco:CharacterString>A GPS unit is used to record the location of each Structure from Motion (SfM) survey site. A digital camera in an underwater housing was used to take photographs of each site. Coded markers 0.25-0.50 m long were used underwater to provide a scale for the mosaic imagery.</gco:CharacterString>
+			</gmd:environmentDescription>
+			<gmd:extent>
+				<gmd:EX_Extent>
+					<gmd:geographicElement>
+						<gmd:EX_GeographicBoundingBox>
+							<gmd:westBoundLongitude>
+								<gco:Decimal>[*SiteWestLon*]</gco:Decimal>
+							</gmd:westBoundLongitude>
+							<gmd:eastBoundLongitude>
+								<gco:Decimal>[*SiteEastLon*]</gco:Decimal>
+							</gmd:eastBoundLongitude>
+							<gmd:southBoundLatitude>
+								<gco:Decimal>[*SiteSouthLat*]</gco:Decimal>
+							</gmd:southBoundLatitude>
+							<gmd:northBoundLatitude>
+								<gco:Decimal>[*SiteNorthLat*]</gco:Decimal>
+							</gmd:northBoundLatitude>
+						</gmd:EX_GeographicBoundingBox>
+					</gmd:geographicElement>
+					<gmd:temporalElement>
+						<gmd:EX_TemporalExtent>
+							<gmd:extent>
+								<gml:TimePeriod gml:id="boundingTemporalExtent">
+									<gml:beginPosition>[*ImageStartTime*]</gml:beginPosition>
+									<gml:endPosition>[*ImageEndTime*]</gml:endPosition>
+								</gml:TimePeriod>
+							</gmd:extent>
+						</gmd:EX_TemporalExtent>
+					</gmd:temporalElement>
+				</gmd:EX_Extent>
+			</gmd:extent>
+			<gmd:supplementalInformation>
+				<gco:CharacterString>The National Coral Reef Monitoring Program (NCRMP) is a framework for conducting sustained observations of biological, climate, and socioeconomic indicators at 10 priority coral reefs across the U.S. and its territories. This integrated approach consolidates monitoring of coral reefs under a uniform method in the Pacific, Atlantic, Caribbean, and the Gulf of Mexico for the first time. NCRMP is funded by the CRCP and supported by NOAA Fisheries, NOAA National Centers for Coastal Ocean Science (NCCOS), and many other partners. The Ecosystem Sciences Division (ESD) at NOAA Fisheries is leading biological monitoring in the U.S. Pacific Islands Region.
+
+The biological component of NCRMP in the Pacific provides a triennial ecological characterization at a broad spatial scale of general reef condition for reef fishes, corals and benthic habitat (i.e., fish species composition/density/size, benthic cover, and coral density/size/condition). Innovative analysis techniques are then used to develop products that give fellow scientists, managers, decision makers and the public a better understanding of a region's resources and how they are changing over time. All data collected through NCRMP is archived with NCEI.</gco:CharacterString>
+			</gmd:supplementalInformation>
+		</gmd:MD_DataIdentification>
+	</gmd:identificationInfo>
+	<gmd:distributionInfo>
+		<gmd:MD_Distribution>
+			<gmd:distributor>
+				<gmd:MD_Distributor>
+					<gmd:distributorContact>
+						<gmd:CI_ResponsibleParty>
+							<gmd:organisationName>
+								<gco:CharacterString>DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce</gco:CharacterString>
+							</gmd:organisationName>
+							<gmd:positionName>
+								<gco:CharacterString>Data Officer</gco:CharacterString>
+							</gmd:positionName>
+							<gmd:contactInfo>
+								<gmd:CI_Contact>
+									<gmd:phone>
+										<gmd:CI_Telephone>
+											<gmd:voice>
+												<gco:CharacterString>301-713-3277</gco:CharacterString>
+											</gmd:voice>
+											<gmd:facsimile>
+												<gco:CharacterString>301-713-3300</gco:CharacterString>
+											</gmd:facsimile>
+										</gmd:CI_Telephone>
+									</gmd:phone>
+									<gmd:address>
+										<gmd:CI_Address>
+											<gmd:deliveryPoint>
+												<gco:CharacterString>Federal Building 151 Patton Avenue</gco:CharacterString>
+											</gmd:deliveryPoint>
+											<gmd:city>
+												<gco:CharacterString>Asheville</gco:CharacterString>
+											</gmd:city>
+											<gmd:administrativeArea>
+												<gco:CharacterString>NC</gco:CharacterString>
+											</gmd:administrativeArea>
+											<gmd:postalCode>
+												<gco:CharacterString>28801-5001</gco:CharacterString>
+											</gmd:postalCode>
+											<gmd:country>
+												<gco:CharacterString>USA</gco:CharacterString>
+											</gmd:country>
+											<gmd:electronicMailAddress>
+												<gco:CharacterString>ncei.info@noaa.gov</gco:CharacterString>
+											</gmd:electronicMailAddress>
+										</gmd:CI_Address>
+									</gmd:address>
+									<gmd:onlineResource>
+										<gmd:CI_OnlineResource>
+											<gmd:linkage>
+												<gmd:URL>https://www.ncei.noaa.gov/</gmd:URL>
+											</gmd:linkage>
+											<gmd:protocol>
+												<gco:CharacterString>HTTPS</gco:CharacterString>
+											</gmd:protocol>
+											<gmd:applicationProfile>
+												<gco:CharacterString>Standard Internet browser</gco:CharacterString>
+											</gmd:applicationProfile>
+											<gmd:name>
+												<gco:CharacterString>NOAA National Centers for Environmental Information website</gco:CharacterString>
+											</gmd:name>
+											<gmd:description>
+												<gco:CharacterString>Main NCEI website providing links to access data and data services.</gco:CharacterString>
+											</gmd:description>
+											<gmd:function>
+												<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+											</gmd:function>
+										</gmd:CI_OnlineResource>
+									</gmd:onlineResource>
+								</gmd:CI_Contact>
+							</gmd:contactInfo>
+							<gmd:role>
+								<gmd:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+							</gmd:role>
+						</gmd:CI_ResponsibleParty>
+					</gmd:distributorContact>
+					<gmd:distributorFormat>
+						<gmd:MD_Format>
+							<gmd:name>
+								<gco:CharacterString>[*DistributorFormat*]</gco:CharacterString>
+							</gmd:name>
+							<gmd:version gco:nilReason="unknown"/>
+						</gmd:MD_Format>
+					</gmd:distributorFormat>
+					<gmd:distributorTransferOptions>
+						<gmd:MD_DigitalTransferOptions>
+							<gmd:transferSize>
+								<gco:Real>[*FileSize*]</gco:Real>
+							</gmd:transferSize>
+							<gmd:onLine>
+								<gmd:CI_OnlineResource>
+									<gmd:linkage>
+										<gmd:URL>
+											https://www.ncei.noaa.gov/access/ocean-exploration/video/?oerkey=[*FileIdentifier*]
+										</gmd:URL>
+									</gmd:linkage>
+									<gmd:name>
+										<!--Check OER code based on metadata examples it looks like file name that they had in the template is the same as the file identifier-->
+										<gco:CharacterString>[*FileIdentifier*]</gco:CharacterString>
+									</gmd:name>
+									<gmd:description>
+										<gco:CharacterString> This URL provides a standard HTTP interface for selecting data from this dataset. The transfer size is in mb. </gco:CharacterString>
+									</gmd:description>
+									<gmd:function>
+										<gmd:CI_OnLineFunctionCode codeListValue="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeList="order">order</gmd:CI_OnLineFunctionCode>
+									</gmd:function>
+								</gmd:CI_OnlineResource>
+							</gmd:onLine>
+						</gmd:MD_DigitalTransferOptions>
+					</gmd:distributorTransferOptions>
+				</gmd:MD_Distributor>
+			</gmd:distributor>
+		</gmd:MD_Distribution>
+	</gmd:distributionInfo>
+	<gmd:dataQualityInfo>
+		<gmd:DQ_DataQuality>
+			<gmd:scope>
+				<gmd:DQ_Scope>
+					<gmd:level>
+						<gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
+					</gmd:level>
+				</gmd:DQ_Scope>
+			</gmd:scope>
+			<gmd:report>
+				<gmd:DQ_NonQuantitativeAttributeAccuracy>
+					<gmd:nameOfMeasure>
+						<gco:CharacterString>Representativeness</gco:CharacterString>
+					</gmd:nameOfMeasure>
+					<gmd:evaluationMethodDescription>
+						<gco:CharacterString>The data set derived from the imagery is only as good as the images themselves; Images with poor resolution, poor lighting, extraneous objects (fins, etc), or blur were excluded from analysis.</gco:CharacterString>
+					</gmd:evaluationMethodDescription>
+					<gmd:result gco:nilReason="missing"/>
+				</gmd:DQ_NonQuantitativeAttributeAccuracy>
+			</gmd:report>
+			<gmd:report>
+				<gmd:DQ_QuantitativeAttributeAccuracy>
+					<gmd:nameOfMeasure>
+						<gco:CharacterString>Accuracy</gco:CharacterString>
+					</gmd:nameOfMeasure>
+					<gmd:evaluationMethodDescription>
+						<gco:CharacterString>Handheld GPS units were used to locate random sites and mark site locations.
+
+Prior to conducting surveys, the SfM image collector was trained to swim in a back-and-forth pattern to collect imagery with 60-80% overlap. Both classroom and field training were completed before any surveys were conducted. This training ensures that all SfM image collection was conducted consistently during the mission.
+</gco:CharacterString>
+					</gmd:evaluationMethodDescription>
+					<gmd:result gco:nilReason="missing"/>
+				</gmd:DQ_QuantitativeAttributeAccuracy>
+			</gmd:report>
+			<gmd:report>
+				<gmd:DQ_CompletenessCommission>
+					<gmd:nameOfMeasure>
+						<gco:CharacterString>Completeness Report</gco:CharacterString>
+					</gmd:nameOfMeasure>
+					<gmd:evaluationMethodDescription>
+						<gco:CharacterString>Only shallow water (0 to 30 meter depth range) hard-bottom habitats are surveyed. At deep sites, bottom time is limited and therefore survey area may be reduced from 3 x 20 m to 3 x 13 m. SfM imagery was collected at all benthic REA survey sites but only at a subset of the Fish REA survey sites. The survey sites were randomly selected using a systematic process based on available habitat and bathymetric data. Although efforts are made to include broad spatial coverage of surveys at each island, weather conditions and other environmental constraints may have prevented the team from surveying exposed reef areas. </gco:CharacterString>
+					</gmd:evaluationMethodDescription>
+					<gmd:result gco:nilReason="missing"/>
+				</gmd:DQ_CompletenessCommission>
+			</gmd:report>
+			<gmd:report>
+				<gmd:DQ_ConceptualConsistency>
+					<gmd:nameOfMeasure>
+						<gco:CharacterString>Conceptual Consistency</gco:CharacterString>
+					</gmd:nameOfMeasure>
+					<gmd:evaluationMethodDescription>
+						<gco:CharacterString>The same method of image collection was used at each surveyed site. </gco:CharacterString>
+					</gmd:evaluationMethodDescription>
+					<gmd:result gco:nilReason="missing"/>
+				</gmd:DQ_ConceptualConsistency>
+			</gmd:report>
+			<gmd:lineage>
+				<gmd:LI_Lineage>
+					<gmd:statement>
+						<gco:CharacterString>The benthic SfM survey methodology, employed by the NOAA Ecosystem Sciences Division (ESD) began in 2019. Benthic imagery is collected at stratified random sites. These photos are evaluated for quality prior to processing and analysis. </gco:CharacterString>
+					</gmd:statement>
+					<gmd:processStep>
+						<gmd:LI_ProcessStep>
+							<gmd:description>
+								<gco:CharacterString>A stratified random sampling (StRS) design was employed to survey the coral reef ecosystems through the U.S. Pacific regions. The survey domain encompassed the majority of the mapped area of reef and hard bottom habitats. The stratification scheme included island, reef zone, and depth in all regions, as well as habitat structure type in the Main Hawaiian Islands. The habitat structure types included simple, complex, and coral-rich. Depth categories of shallow (0-6 m), mid (&gt; 6-18m) and deep (&gt;18-30 m) were also incorporated into the stratification scheme. Allocation of sampling effort was proportional to strata area and variance in coral density. Sites were randomly selected within each stratum.
+
+A geographic information system (GIS) and digital spatial databases of benthic habitats (NOAA National Centers for Coastal Ocean Science NCCOS), reef zones (IKONOS satellite imagery, NDGC 1998) bathymetry (NDGC 1998, CREP benthic mapping data), and marine reserve boundaries (NOAA) were used to facilitate spatial delineation of the sampling survey domain, strata, and sample units. Map resolution was such that the survey domain could be overlain by a grid using a GIS with individual cells of size 50 m by 50 m in area. A one-stage sampling scheme following Cochran (1977) was employed. Grid cells containing hard-bottom reef habitats were designated as primary sample units (referred to as sites).</gco:CharacterString>
+							</gmd:description>
+						</gmd:LI_ProcessStep>
+					</gmd:processStep>
+					<gmd:processStep>
+						<gmd:LI_ProcessStep>
+							<gmd:description>
+								<gco:CharacterString>SfM benthic surveys were conducted by both the fish and benthic teams to record the benthic community composition. A 3 x 20 m or 3 x 13 m plot was visually established centered on a transect line. 3-4 depth markers were placed within the plot for scale. White balance settings were adjusted in situ using an 18% gray card. JPEG images were collected using a Canon SL2 or SL3 digital camera in an underwater housing with a dome port. Images were collected at each site by swimming in a back-and-forth motion 1 m above the substrate capturing images continuously to achieve a 60-80% overlap across consecutive images.</gco:CharacterString>
+							</gmd:description>
+						</gmd:LI_ProcessStep>
+					</gmd:processStep>
+					<gmd:processStep>
+						<gmd:LI_ProcessStep>
+							<gmd:description>
+								<gco:CharacterString>Images for each site were evaluated to remove extraneous or erroneous photographs (e.g. fins, blue water, excessive blur, etc.) At some sites images were color corrected and exposure corrected using Adobe Lightroom because white balance was not achieved in situ or a substantial number of images were dark, respectively. Image adjustments were batch run per site for consistent correction. Images were processed in Agisoft Metashape to create 3-dimensional models as well as 2-dimensional "orthomosaics" for each site to be used for data extraction.
+
+Image data includes ~1500 benthic photographs per survey site. Included in the archive package is a list of survey sites, including region, island, site, date (day, month, year), latitude (dd), longitude (dd), depth marker numbers with corresponding depth values, marker length for scaling models, camera model and lens focal length, if the images for a site were color or exposure corrected, and a unique image name. The file naming convention for each photo/image is NCRMP_SFM_StRS_YEAR_MissionID_REGION_ISLAND-Site#_IMG_####.jpg
+</gco:CharacterString>
+							</gmd:description>
+						</gmd:LI_ProcessStep>
+					</gmd:processStep>
+				</gmd:LI_Lineage>
+			</gmd:lineage>
+		</gmd:DQ_DataQuality>
+	</gmd:dataQualityInfo>
+	<gmd:metadataConstraints>
+		<gmd:MD_SecurityConstraints>
+			<gmd:classification>
+				<gmd:MD_ClassificationCode codeList="unclassified" codeListValue="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_ClassificationCode" codeSpace="001"/>
+			</gmd:classification>
+			<gmd:classificationSystem>
+				<gco:CharacterString>none</gco:CharacterString>
+			</gmd:classificationSystem>
+		</gmd:MD_SecurityConstraints>
+	</gmd:metadataConstraints>
+	<gmd:metadataMaintenance>
+		<gmd:MD_MaintenanceInformation>
+			<gmd:maintenanceAndUpdateFrequency gco:nilReason="unknown"/>
+			<gmd:maintenanceNote>
+				<gco:CharacterString>This ISO metadata record was programmatically generated.</gco:CharacterString>
+			</gmd:maintenanceNote>
+			<gmd:contact xlink:title=">DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce">
+				<gmd:CI_ResponsibleParty uuid="C4AB0C2676C403438F1441AF80FC7CF4">
+					<gmd:organisationName>
+						<gco:CharacterString>DOC/NOAA/NESDIS/NCEI > National Centers for Environmental Information, NESDIS, NOAA, U.S. Department of Commerce</gco:CharacterString>
+					</gmd:organisationName>
+					<gmd:positionName>
+						<gco:CharacterString>Data Officer</gco:CharacterString>
+					</gmd:positionName>
+					<gmd:contactInfo>
+						<gmd:CI_Contact>
+							<gmd:phone>
+								<gmd:CI_Telephone>
+									<gmd:voice>
+										<gco:CharacterString>301-713-3277</gco:CharacterString>
+									</gmd:voice>
+									<gmd:facsimile>
+										<gco:CharacterString>301-713-3300</gco:CharacterString>
+									</gmd:facsimile>
+								</gmd:CI_Telephone>
+							</gmd:phone>
+							<gmd:address>
+								<gmd:CI_Address>
+									<gmd:deliveryPoint>
+										<gco:CharacterString>Federal Building 151 Patton Avenue</gco:CharacterString>
+									</gmd:deliveryPoint>
+									<gmd:city>
+										<gco:CharacterString>Asheville</gco:CharacterString>
+									</gmd:city>
+									<gmd:administrativeArea>
+										<gco:CharacterString>NC</gco:CharacterString>
+									</gmd:administrativeArea>
+									<gmd:postalCode>
+										<gco:CharacterString>28801-5001</gco:CharacterString>
+									</gmd:postalCode>
+									<gmd:country>
+										<gco:CharacterString>USA</gco:CharacterString>
+									</gmd:country>
+									<gmd:electronicMailAddress>
+										<gco:CharacterString>ncei.info@noaa.gov</gco:CharacterString>
+									</gmd:electronicMailAddress>
+								</gmd:CI_Address>
+							</gmd:address>
+							<gmd:onlineResource>
+								<gmd:CI_OnlineResource>
+									<gmd:linkage>
+										<gmd:URL>https://www.ncei.noaa.gov/</gmd:URL>
+									</gmd:linkage>
+									<gmd:protocol>
+										<gco:CharacterString>HTTPS</gco:CharacterString>
+									</gmd:protocol>
+									<gmd:applicationProfile>
+										<gco:CharacterString>Standard Internet browser</gco:CharacterString>
+									</gmd:applicationProfile>
+									<gmd:name>
+										<gco:CharacterString>NOAA National Centers for Environmental Information website</gco:CharacterString>
+									</gmd:name>
+									<gmd:description>
+										<gco:CharacterString>Main NCEI website providing links to access data and data services.</gco:CharacterString>
+									</gmd:description>
+									<gmd:function>
+										<gmd:CI_OnLineFunctionCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode" codeListValue="information">information</gmd:CI_OnLineFunctionCode>
+									</gmd:function>
+								</gmd:CI_OnlineResource>
+							</gmd:onlineResource>
+						</gmd:CI_Contact>
+					</gmd:contactInfo>
+					<gmd:role>
+						<gmd:CI_RoleCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#CI_RoleCode" codeListValue="custodian">custodian</gmd:CI_RoleCode>
+					</gmd:role>
+				</gmd:CI_ResponsibleParty>
+			</gmd:contact>
+		</gmd:MD_MaintenanceInformation>
+	</gmd:metadataMaintenance>
+</gmi:MI_Metadata>
