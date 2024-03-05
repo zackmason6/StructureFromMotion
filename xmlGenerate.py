@@ -104,9 +104,9 @@ HOW TO USE THIS SCRIPT
     - shipLookup = "shipLookup.csv"
     - dictionaryFileName = 'SfM_Dictionary.csv'
 
-2. This program reads from an xml metadata template and replaces placeholders within that template. This template
-   is currently set as being stored in the working directory where you run this script. Here is the file name:
-   'xmlTemplate.xml.' This can be easily modified if desired.
+2. This program reads from two different xml metadata templates and replaces placeholders within that template. 
+   These templates are currently set as being stored in the working directory where you run this script. This can be 
+   easily modified if desired.
 
 3. Ensure that your working directory contains all the lookup tables mentioned in step 1a and the xml metadata 
    template mentioned in step 2. It should also contain the .mnf files that you would like to parse through. It 
@@ -308,7 +308,7 @@ def editTemplateForReal(myTemplate, surveyDate,islandKeywords,islandOceanKeyword
     for entry in myDict:
         templateText = templateText.replace(entry,myDict[entry])
 
-    findThis = '\[\*.*\*\]'
+    findThis = '[[][*].*[*][]]'
     thingsToReplace = re.findall(findThis, templateText)
     sortedList = []
     [sortedList.append(x) for x in thingsToReplace if x not in sortedList]
