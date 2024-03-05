@@ -337,6 +337,8 @@ def getFileSize(data):
     fileSize = str(data).split(",")
     fileSize = fileSize[2]
     fileSize = fileSize.replace("'","")
+    fileSize = fileSize.replace("]","")
+    fileSize = fileSize.strip()
     fileSize = convert_size(int(fileSize))
     return fileSize
 
@@ -361,7 +363,7 @@ def oneRecordPerFile():
     currentDate = date.today()
     myLookup = ""
 
-    #print("\nTHIS IS YOUR FILE LIST: " + str(myFileList))
+    print("\nTHIS IS YOUR FILE LIST: " + str(myFileList))
     for file in myFileList:
         dataCount = 0
         #print("STARTING WITH THIS FILE: " + str(file))
@@ -389,6 +391,7 @@ def oneRecordPerFile():
                 csvFileName = csvFileName.replace("CRMP","NCRMP")
 
             siteName = getSiteName(str(csvFileName))
+            #print("HERE IS YOUR SITENAME: "+ siteName)
             fileSize = getFileSize(mnfData)
 
             missionStart = getDateRange(myLookup,"min")
@@ -402,7 +405,7 @@ def oneRecordPerFile():
                 rowNumber = getRowNumber(siteName,myLookup,'SITE')
             except:
                 rowNumber = False
-
+            #print("HERE IS YOUR ROW NUMBER: " +str(rowNumber))
             if rowNumber is not False:
                 mission = getData(rowNumber,myLookup,"MISSION")
                 numberOfImages = getData(rowNumber,myLookup,"NUMBER OF IMAGES")
@@ -542,11 +545,11 @@ def getFileName(mnfData):
     extensionList = ["tar","csv","dat"]
     for extension in extensionList:
         if extension == "csv":
-            regex = ".*\.csv"
+            regex = ".*[.]csv"
         elif extension == "tar":
-            regex = ".*\.tar"
+            regex = ".*[.]tar"
         elif extension == "dat":
-            regex = ".*\.dat"
+            regex = ".*[.]dat"
         for item in mnfData:
             #print("\n\nLooking through this data: " + str(item))
             filename = re.findall(regex,item)
