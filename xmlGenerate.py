@@ -293,6 +293,15 @@ def editTemplateForReal(myTemplate, surveyDate,islandKeywords,islandOceanKeyword
                 reader = csv.reader(csvFile)
                 for item in reader:
                     print(item)
+
+    ################
+
+    ################
+
+    ################
+
+    # ADD SOMETHING TO CALCULATE A SECONDARY TITLE - SHOULD CONTAIN THE CRUISE, DATE, LOCATION, and NCRMP or just a short cruise name and cruise code - region, sfm imagery, year, fixed or stratified?
+
     surveyDate = dateConvert(surveyDate,'%m/%d/%Y')
     myDict = {'[*CRCPProjectNumber*]':str(crcpProjectNumber),'[*Date*]':str(currentDate),'[*SurveyDate*]':str(surveyDate),
     '[*CoRISPlaceCountry*]':str(regionCountryKeyword),'[*CoRISPlaceOcean*]':str(regionOceanKeyword),'[*MissionStartTime*]':str(missionStart),
@@ -405,12 +414,18 @@ def oneRecordPerFile():
                 rowNumber = getRowNumber(siteName,myLookup,'SITE')
             except:
                 rowNumber = False
-            #print("HERE IS YOUR ROW NUMBER: " +str(rowNumber))
+            print("HERE IS YOUR ROW NUMBER: " +str(rowNumber))
+            print("HERE IS YOUR SITE NAME: " +str(siteName))
+            print("HERE IS YOUR LOOKUP FILE: " + str(myLookup))
             if rowNumber is not False:
                 mission = getData(rowNumber,myLookup,"MISSION")
+                print("FOUND THIS MISSION: " +str(mission))
                 numberOfImages = getData(rowNumber,myLookup,"NUMBER OF IMAGES")
+                print("FOUND THIS number of images: " +str(numberOfImages))
                 island = getData(rowNumber,myLookup,"ISLAND")
+                print("FOUND THIS ISLAND: " +str(island))
                 surveyDate = getData(rowNumber,myLookup,"DATE")
+                print("FOUND THIS SURVEY DATE: " +str(surveyDate))
 
                 dateString = str(surveyDate)
                 count = len(dateString)
@@ -475,16 +490,17 @@ def oneRecordPerFile():
                 badFileList.append(myDict)
 
             missionCode = mission[0] + mission[1]
+            print("MISSION CODE: " + str(missionCode))
             shipLookup = "shipLookup.csv"
             try:
                 missionLookupNumber = getRowNumber(missionCode, shipLookup,'Ship_Two_letter_code')
             except:
-                rowNumber = False
+                missionLookupNumber = False
 
             if missionLookupNumber is not False:
                 shipName = getData(missionLookupNumber, shipLookup,'Ship Keyword')
             else:
-                myDict = {csvFileName:"missionLookup issue"}
+                myDict = {csvFileName:"shipName lookup issue"}
                 print("Skipped processing on this file: " + str(csvFileName))
                 badFileList.append(myDict)
 
@@ -493,10 +509,26 @@ def oneRecordPerFile():
             
             myUUID= getUUID(csvFileName)
 
+            print("Here are your variables: ")
+            print(str(rowNumber))
+            print(str(missionLookupNumber))
+            print(str(regionNumber))
+            print(str(islandRowNumber))
+            print(str(dictionaryRowNumber))
             if rowNumber is not False and missionLookupNumber is not False and regionNumber is not False and islandRowNumber is not False and dictionaryRowNumber is not False:
                 # Call the function that edits the xml template with all the gathered information
                 xmlText = editTemplateForReal(myTemplate, surveyDate,islandKeywords,islandOceanKeywords,missionStart,missionEnd,siteName,eastLon,westLon,northLat,southLat,islandFullName,regionName,fileSize,csvFileName,year,parentRecordID,regionCountryKeyword,regionOceanKeyword,shipName,currentDate,csvFileName,gcmdKeyword,myUUID)
                 writeXml(xmlText,csvFileName)
+            elif rowNumber == False:
+                print("rowNumber is False!!!!!!!!!!!!!")
+            elif missionLookupNumber == False:
+                print("missionLookupNumber is False!!!!!!!!!!!!!")
+            elif regionNumber == False:
+                print("regionNumber is False!!!!!!!!!!!!!")
+            elif islandRowNumber == False:
+                print("islandRowNumber is False!!!!!!!!!!")
+            elif dictionaryRowNumber == False:
+                print("dictionaryRowNumber is False!!!!!!!!!!!!")
 
 
 def writeXml(xmlData,xmlFileName):
