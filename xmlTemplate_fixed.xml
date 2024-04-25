@@ -123,7 +123,7 @@
                   <gco:CharacterString>National Coral Reef Monitoring Program: Structure from motion (SfM) Benthic Images collected at the Fixed Site [*SiteName*] around [*IslandName*] in [*Region*] on [*SurveyDate*]</gco:CharacterString>
                </gmd:title>
                <gmd:alternateTitle>
-                  <gco:CharacterString>SfM Vital Rates Benthic Imagery at site [*SiteName*]</gco:CharacterString>
+                  <gco:CharacterString>[*Region*] SfM Vital Rates Benthic Imagery [*Year*]</gco:CharacterString>
                </gmd:alternateTitle>
               <gmd:date>
 						<gmd:CI_Date>
@@ -219,7 +219,10 @@
             </gmd:CI_Citation>
          </gmd:citation>
          <gmd:abstract>
-            <gco:CharacterString>The photographs described in this dataset were collected using a Structure from Motion (SfM) approach during in-water surveys throughout the U.S. Pacific since 2019. Surveys were funded by NOAA Coral Reef Conservation Program (CRCP) and conducted by the NOAA Fisheries, Ecosystem Sciences Division (ESD). Survey sites consisted of sites previously established by collaborators from Scripps Institution of Oceanography and new sites established in 2019 by NOAA ESD. All sites ranged from 9-16 meters in depth and surveys covered approximately 100 m2 of reef habitat. 
+            <gco:CharacterString>
+			This archival package contains imagery from [*SiteName*] that was obtained around [*IslandName*] on [*SurveyDate*].
+			
+			The photographs described in this dataset were collected using a Structure from Motion (SfM) approach during in-water surveys throughout the U.S. Pacific since 2019. Surveys were funded by NOAA Coral Reef Conservation Program (CRCP) and conducted by the NOAA Fisheries, Ecosystem Sciences Division (ESD). Survey sites consisted of sites previously established by collaborators from Scripps Institution of Oceanography and new sites established in 2019 by NOAA ESD. All sites ranged from 9-16 meters in depth and surveys covered approximately 100 m2 of reef habitat. 
             
             Sites were photographed by divers swimming approximately 1 m off the seafloor with high overlap between images to produce SfM products. The data extracted from this imagery provides information on juvenile and adult taxonomic identification, abundance, planar area across the [*Region*] in [*Year*], and can be used to track the fate of individual coral colonies over time. This data is archived separately within NCEI.
             
@@ -328,6 +331,27 @@
 					</gmd:thesaurusName>
 				</gmd:MD_Keywords>
 			</gmd:descriptiveKeywords>
+							<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>[*Region*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>[*IslandName*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Dive Site Names</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>	
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
@@ -349,6 +373,39 @@
 						<gmd:CI_Citation>
 							<gmd:title>
 								<gco:CharacterString>CoRIS Place Thesaurus</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+						<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Reef Habitat</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Reef Monitoring and Assessment</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Photographic Analysis</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Structure from Motion</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Reef Ecology</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Communities</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Keyword Search Index</gco:CharacterString>
 							</gmd:title>
 							<gmd:date gco:nilReason="missing"/>
 						</gmd:CI_Citation>

@@ -107,7 +107,7 @@
 				  </gco:CharacterString>
 					</gmd:title>
 					<gmd:alternateTitle>
-						<gco:CharacterString>NCRMP: SfM Benthic Images at site [*SiteName*]</gco:CharacterString>
+						<gco:CharacterString>[*Region*] SfM Benthic Imagery [*Year*]</gco:CharacterString>
 					</gmd:alternateTitle>
 					<gmd:date>
 						<gmd:CI_Date>
@@ -197,13 +197,14 @@
 				</gmd:CI_Citation>
 			</gmd:citation>
 			<gmd:abstract>
-				<gco:CharacterString>The data described here are Structure from Motion (SfM) benthic habitat imagery from benthic transect surveys conducted at stratified random sites by the Pacific Islands Fisheries Science Center (PIFSC) Ecosystem Sciences Division (ESD)--formerly the Coral Reef Ecosystem Division--as part of the NOAA National Coral Reef Monitoring Program (NCRMP). The SfM surveys replicates the visual  Rapid Ecological Assessment (REA) survey methodology for corals conducted during ESD-led NCRMP missions across the Pacific Ocean beginning in 2019.
+				<gco:CharacterString>
+				This archival package contains imagery from [*SiteName*] that was obtained around [*IslandName*] on [*SurveyDate*]
+				
+				The data described here are Structure from Motion (SfM) benthic habitat imagery from benthic transect surveys conducted at stratified random sites by the Pacific Islands Fisheries Science Center (PIFSC) Ecosystem Sciences Division (ESD)--formerly the Coral Reef Ecosystem Division--as part of the NOAA National Coral Reef Monitoring Program (NCRMP). The SfM surveys replicates the visual  Rapid Ecological Assessment (REA) survey methodology for corals conducted during ESD-led NCRMP missions across the Pacific Ocean beginning in 2019.
 
 A stratified random sampling (StRS) design was employed to survey the coral reef ecosystems across the U.S. Pacific Regions (Hawaiian Archipelago, Mariana Archipelago, American Samoa, and the Pacific Remote Island Areas). The survey domain encompassed the majority of the mapped area of reef and hard bottom habitats in the 0-30 m depth range. The stratification scheme included island, sub-island sector, reef zone, and depth in all regions, as well as habitat structure type in the [*Region*]. Allocation of sampling effort was proportional to strata area and variance in coral density. The StRS design effectively reduces estimate variance by sampling more sites with larger hardbottom area and variance. Therefore, site-level analyses should be employed with caution.
 
 Sites were imaged using underwater cameras along 3x20m (3x13m for sites deeper than 18m) transects to extract data for two coral life stages (juveniles, adults) across the [*Region*] in [*Year*]. Adult colony surveys record taxon (genus or species), morphology, colony size, partial mortality in two categories - old dead and recent dead, cause of recent dead partial mortality, and non-lesion forming condition including bleaching and disease. These data are used to calculate density, size distributions, average partial mortality and prevalence and mean severity of coral health conditions. Juvenile colony surveys include taxon (genus or species), morphology and size, and are used to calculate juvenile density and size distributions by taxon. This data is archived separately within NCEI.
-
-This archival package contains imagery from [*SiteName*] that was obtained around [*IslandName*] on [*SurveyDate*]
 
 </gco:CharacterString>
 			</gmd:abstract>
@@ -305,6 +306,30 @@ This archival package contains imagery from [*SiteName*] that was obtained aroun
 					</gmd:thesaurusName>
 				</gmd:MD_Keywords>
 			</gmd:descriptiveKeywords>
+
+				<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>[*Region*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>[*IslandName*]</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="https://data.noaa.gov/resources/iso19139/schema/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode" codeListValue="place">place</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Dive Site Names</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>		
+			
+			
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
@@ -332,6 +357,41 @@ This archival package contains imagery from [*SiteName*] that was obtained aroun
 					</gmd:thesaurusName>
 				</gmd:MD_Keywords>
 			</gmd:descriptiveKeywords>
+			<gmd:descriptiveKeywords>
+				<gmd:MD_Keywords>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Reef Habitat</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Reef Monitoring and Assessment</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Photographic Analysis</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Structure from Motion</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Reef Ecology</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:keyword>
+						<gco:CharacterString>Coral Communities</gco:CharacterString>
+					</gmd:keyword>
+					<gmd:type>
+						<gmd:MD_KeywordTypeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#gmd:MD_KeywordTypeCode" codeListValue="theme">theme</gmd:MD_KeywordTypeCode>
+					</gmd:type>
+					<gmd:thesaurusName>
+						<gmd:CI_Citation>
+							<gmd:title>
+								<gco:CharacterString>Keyword Search Index</gco:CharacterString>
+							</gmd:title>
+							<gmd:date gco:nilReason="missing"/>
+						</gmd:CI_Citation>
+					</gmd:thesaurusName>
+				</gmd:MD_Keywords>
+			</gmd:descriptiveKeywords>
+			
+			
 			<gmd:descriptiveKeywords>
 				<gmd:MD_Keywords>
 					<gmd:keyword>
