@@ -123,7 +123,7 @@
                   <gco:CharacterString>National Coral Reef Monitoring Program: Structure from motion (SfM) Benthic Images collected at the Fixed Site [*SiteName*] around [*IslandName*] in [*Region*] on [*SurveyDate*]</gco:CharacterString>
                </gmd:title>
                <gmd:alternateTitle>
-                  <gco:CharacterString>[*Region*] SfM Vital Rates Benthic Imagery [*Year*]</gco:CharacterString>
+                  <gco:CharacterString>SfM [*Region*] [*Year*] Vital Rates Benthic Imagery at Fixed Sites ([*parent metadata ID*])</gco:CharacterString>
                </gmd:alternateTitle>
               <gmd:date>
 						<gmd:CI_Date>

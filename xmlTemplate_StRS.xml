@@ -107,7 +107,7 @@
 				  </gco:CharacterString>
 					</gmd:title>
 					<gmd:alternateTitle>
-						<gco:CharacterString>[*Region*] SfM Benthic Imagery [*Year*]</gco:CharacterString>
+						<gco:CharacterString>SfM [*Region*] [*Year*] Benthic Imagery at Stratified Random Sites ([*parent metadata ID*])</gco:CharacterString>
 					</gmd:alternateTitle>
 					<gmd:date>
 						<gmd:CI_Date>
