@@ -260,8 +260,6 @@ def detect_encoding(file):
 
 def editTemplateForReal(myTemplate, surveyDate,islandKeywords,islandOceanKeywords,missionStart,missionEnd,siteName,eastLon,westLon,northLat,southLat,islandFullName,regionName,fileSize,csvFileName,year,parentRecordID,regionCountryKeyword,regionOceanKeyword,shipName,currentDate,tarFileName,gcmdKeyword,myUUID):
     projectLookup = "projectLookup.csv"
-
-
     charenc = detect_encoding(myTemplate)
     charenc = charenc['encoding']
     print("Encoding:", charenc)
@@ -293,14 +291,6 @@ def editTemplateForReal(myTemplate, surveyDate,islandKeywords,islandOceanKeyword
                 reader = csv.reader(csvFile)
                 for item in reader:
                     print(item)
-
-    ################
-
-    ################
-
-    ################
-
-    # ADD SOMETHING TO CALCULATE A SECONDARY TITLE - SHOULD CONTAIN THE CRUISE, DATE, LOCATION, and NCRMP or just a short cruise name and cruise code - region, sfm imagery, year, fixed or stratified?
 
     surveyDate = dateConvert(surveyDate,'%m/%d/%Y')
     myDict = {'[*CRCPProjectNumber*]':str(crcpProjectNumber),'[*Date*]':str(currentDate),'[*SurveyDate*]':str(surveyDate),
