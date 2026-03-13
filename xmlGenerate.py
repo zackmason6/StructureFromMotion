@@ -140,11 +140,11 @@ HOW TO USE THIS SCRIPT
     - strsLookup
 """
 
-dictionaryFileName = 'SfM_Dictionary.csv'
-islandLookup = 'islandLookup.csv'
-fixedLookup = 'fixedLookup.csv'
-strsLookup = 'strsLookup.csv'
-uuidLookup = 'uuidLookup.csv'
+dictionaryFileName = "SfM_Dictionary.csv"
+islandLookup = "islandLookup.csv"
+fixedLookup = "fixedLookup.csv"
+strsLookup = "strsLookup.csv"
+uuidLookup = "uuidLookup.csv"
 badFileList = []
 
 try:
@@ -156,7 +156,8 @@ except:
 # If myDirectory is left like this you can really only run this script from your current working directory.
 # This does allow the user to run this application anywhere they have access though. I think it works as-is.
 myDirectory = os.getcwd()
-    
+
+
 def getFileList(myDirectory):
     """This function gets a list of mnf files from the user's current directory.
     Specifically, the os.listdir command gets a list of everything in the directory
@@ -164,7 +165,7 @@ def getFileList(myDirectory):
     filename ends with .mnf. These are then added to another list.
 
     Args:
-        myDirectory (string): This directory is the user's current working 
+        myDirectory (string): This directory is the user's current working
         directory.
 
     Returns:
@@ -177,7 +178,8 @@ def getFileList(myDirectory):
             dataFiles.append(file)
     return dataFiles
 
-def getLonLat(columnName,fileName,minOrMax):
+
+def getLonLat(columnName, fileName, minOrMax):
     df = pd.read_csv(fileName)
     column = df[columnName]
     max_value = column.max()
@@ -189,24 +191,25 @@ def getLonLat(columnName,fileName,minOrMax):
     else:
         return "INVALID INPUT"
 
-def getDateRange(file,minOrMax):
+
+def getDateRange(file, minOrMax):
     """This function is passed a filepath string. It then converts that file into a dataframe.
     once that dataframe is converted, it takes the date column from the dataframe and converts
     all values into datetime objects. Then it grabs the converted date column and gets the
-    minimum and maximum values. Once those are identified it converts them back to string 
+    minimum and maximum values. Once those are identified it converts them back to string
     values and combines them to create a range.
 
     Args:
-        file (string): string containing a file path extracted from a list of all files in 
+        file (string): string containing a file path extracted from a list of all files in
         the user's current directory.
 
     Returns:
         string: This dateRange string contains two dateTimes converted to strings. Basically these
         are the earliest and latest dates found in the date column of the file passed to this function.
     """
-    
+
     df = pd.read_csv(file)
-    df['DATE'] =  pd.to_datetime(df['DATE'])
+    df["DATE"] = pd.to_datetime(df["DATE"])
     column = df["DATE"]
     max_value = column.max()
     min_value = column.min()
@@ -220,33 +223,36 @@ def getDateRange(file,minOrMax):
     else:
         return dateRange
 
-def dateConvert(dateString,format):
+
+def dateConvert(dateString, format):
     date_object = datetime.datetime.strptime(dateString, format)
 
     monthString = str(date_object.month)
-    if len(monthString) <2:
+    if len(monthString) < 2:
         monthString = "0" + monthString
-    
+
     dayString = str(date_object.day)
-    if len(dayString)<2:
+    if len(dayString) < 2:
         dayString = "0" + dayString
-    newDate = str(date_object.year) + '-' + monthString + '-' + dayString
+    newDate = str(date_object.year) + "-" + monthString + "-" + dayString
     return newDate
 
+
 def getUUID(csvFileName):
-    myUUID= ""
+    myUUID = ""
     try:
-        fileNameRowNumber = getRowNumber(str(csvFileName),uuidLookup,"File Name")
-        myUUID = getData(fileNameRowNumber,uuidLookup,"uuid")
+        fileNameRowNumber = getRowNumber(str(csvFileName), uuidLookup, "File Name")
+        myUUID = getData(fileNameRowNumber, uuidLookup, "uuid")
         print("FILENAME AND UUID FOUND. UUID: " + str(myUUID))
     except:
         myUUID = uuid.uuid4()
-        #print("UUID GENERATED: " + str(myUUID))
-        data = [str(csvFileName),str(myUUID)]
-        with open(uuidLookup, 'a') as f:
+        # print("UUID GENERATED: " + str(myUUID))
+        data = [str(csvFileName), str(myUUID)]
+        with open(uuidLookup, "a") as f:
             writer = csv.writer(f)
             writer.writerow(data)
     return myUUID
+
 
 def detect_encoding(file):
     detector = chardet.universaldetector.UniversalDetector()
@@ -258,56 +264,111 @@ def detect_encoding(file):
     detector.close()
     return detector.result
 
-def editTemplateForReal(myTemplate, surveyDate,islandKeywords,islandOceanKeywords,missionStart,missionEnd,siteName,eastLon,westLon,northLat,southLat,islandFullName,regionName,fileSize,csvFileName,year,parentRecordID,regionCountryKeyword,regionOceanKeyword,shipName,currentDate,tarFileName,gcmdKeyword,myUUID):
+
+def editTemplateForReal(
+    myTemplate,
+    surveyDate,
+    islandKeywords,
+    islandOceanKeywords,
+    missionStart,
+    missionEnd,
+    siteName,
+    eastLon,
+    westLon,
+    northLat,
+    southLat,
+    islandFullName,
+    regionName,
+    fileSize,
+    csvFileName,
+    year,
+    parentRecordID,
+    regionCountryKeyword,
+    regionOceanKeyword,
+    shipName,
+    currentDate,
+    tarFileName,
+    gcmdKeyword,
+    myUUID,
+):
     projectLookup = "projectLookup.csv"
     charenc = detect_encoding(myTemplate)
-    charenc = charenc['encoding']
+    charenc = charenc["encoding"]
     print("Encoding:", charenc)
 
-    with open(myTemplate,'r',encoding=charenc) as newXmlTemplate:
+    with open(myTemplate, "r", encoding=charenc) as newXmlTemplate:
         print("TEMPLATE OPEN")
         templateText = newXmlTemplate.read()
-    
-    #landingPageLink = 'https://data.noaa.gov/metaview/page?xml=NOAA/NESDIS/ncei/paleo//iso/xml/[*INSERT*].xml\&view=getDataView\&header=none'
-    landingPageLink = 'https://data.noaa.gov/waf/NOAA/NESDIS/ncei/coral/iso/[*INSERT*].xml\&amp;view=getDataView\&amp;header=none'
-    landingPageLink = landingPageLink.replace('[*INSERT*]',parentRecordID)
+
+    # landingPageLink = 'https://data.noaa.gov/metaview/page?xml=NOAA/NESDIS/ncei/paleo//iso/xml/[*INSERT*].xml\&view=getDataView\&header=none'
+    landingPageLink = "https://data.noaa.gov/waf/NOAA/NESDIS/ncei/coral/iso/[*INSERT*].xml&amp;view=getDataView&amp;header=none"
+    landingPageLink = landingPageLink.replace("[*INSERT*]", parentRecordID)
 
     crcpProjectKeyword = ""
     if str(crcpProjectNumber) == "743":
         crcpProjectKeyword = "National Coral Reef Monitoring Program (NCRMP)"
     else:
         try:
-            projectRowNumber = getRowNumber(int(crcpProjectNumber),projectLookup,"projectNumber")
-            #("This is your project row number: " + str(projectRowNumber))
-            crcpProjectKeyword = getData(projectRowNumber,projectLookup,"projectName")
-            #print("THIS IS YOUR PROJECT NAME: " + crcpProjectKeyword)
+            projectRowNumber = getRowNumber(
+                int(crcpProjectNumber), projectLookup, "projectNumber"
+            )
+            # ("This is your project row number: " + str(projectRowNumber))
+            crcpProjectKeyword = getData(projectRowNumber, projectLookup, "projectName")
+            # print("THIS IS YOUR PROJECT NAME: " + crcpProjectKeyword)
         except:
-            crcpProjectKeyword = input("\nProject information not found. Please enter the project name for project number " + str(crcpProjectNumber) + ":\n")
-            data = [int(crcpProjectNumber),str(crcpProjectKeyword)]
-            with open(projectLookup, 'a') as f:
+            crcpProjectKeyword = input(
+                "\nProject information not found. Please enter the project name for project number "
+                + str(crcpProjectNumber)
+                + ":\n"
+            )
+            data = [int(crcpProjectNumber), str(crcpProjectKeyword)]
+            with open(projectLookup, "a") as f:
                 writer = csv.writer(f)
                 writer.writerow(data)
-            with open(projectLookup, 'r') as csvFile:
+            with open(projectLookup, "r") as csvFile:
                 reader = csv.reader(csvFile)
                 for item in reader:
                     print(item)
 
-    surveyDate = dateConvert(surveyDate,'%m/%d/%Y')
-    myDict = {'[*CRCPProjectNumber*]':str(crcpProjectNumber),'[*Date*]':str(currentDate),'[*SurveyDate*]':str(surveyDate),
-    '[*CoRISPlaceCountry*]':str(regionCountryKeyword),'[*CoRISPlaceOcean*]':str(regionOceanKeyword),'[*MissionStartTime*]':str(missionStart),
-    '[*MissionEndTime*]':str(missionEnd),'[*SiteName*]':str(siteName),'[*SiteWestLon*]':str(westLon),'[*SiteEastLon*]': str(eastLon),'[*SiteSouthLat*]': str(southLat),
-    '[*SiteNorthLat*]':str(northLat),'[*IslandName*]':str(islandFullName),'[*Region*]':regionName,'[*FileSize*]':str(fileSize),'[*ImageStartTime*]':str(surveyDate),
-    '[*ImageEndTime*]':str(surveyDate),'[*FileIdentifier*]':str(tarFileName),'[*SfMSiteFileName*]':str(tarFileName),'[*Year*]':str(year),'[*DistributorFormat*]':"JPEG",
-    '[*CRCPProjectKeyword*]':str(crcpProjectKeyword),'[*parent metadata ID*]':str(parentRecordID),'[*parent metadata landing page link or DOI link*]': str(landingPageLink),
-    '[*CoRISPlaceIslandCountry*]': str(islandKeywords),'[*CoRISPlaceIslandOcean*]':str(islandOceanKeywords),'[*KeywordShipName*]':str(shipName),'[*GCMD_PlaceKeyword]':str(gcmdKeyword),
-    '[*UUID*]':str(myUUID)}
-    
+    surveyDate = dateConvert(surveyDate, "%m/%d/%Y")
+    myDict = {
+        "[*CRCPProjectNumber*]": str(crcpProjectNumber),
+        "[*Date*]": str(currentDate),
+        "[*SurveyDate*]": str(surveyDate),
+        "[*CoRISPlaceCountry*]": str(regionCountryKeyword),
+        "[*CoRISPlaceOcean*]": str(regionOceanKeyword),
+        "[*MissionStartTime*]": str(missionStart),
+        "[*MissionEndTime*]": str(missionEnd),
+        "[*SiteName*]": str(siteName),
+        "[*SiteWestLon*]": str(westLon),
+        "[*SiteEastLon*]": str(eastLon),
+        "[*SiteSouthLat*]": str(southLat),
+        "[*SiteNorthLat*]": str(northLat),
+        "[*IslandName*]": str(islandFullName),
+        "[*Region*]": regionName,
+        "[*FileSize*]": str(fileSize),
+        "[*ImageStartTime*]": str(surveyDate),
+        "[*ImageEndTime*]": str(surveyDate),
+        "[*FileIdentifier*]": str(tarFileName),
+        "[*SfMSiteFileName*]": str(tarFileName),
+        "[*Year*]": str(year),
+        "[*DistributorFormat*]": "JPEG",
+        "[*CRCPProjectKeyword*]": str(crcpProjectKeyword),
+        "[*parent metadata ID*]": str(parentRecordID),
+        "[*parent metadata landing page link or DOI link*]": str(landingPageLink),
+        "[*CoRISPlaceIslandCountry*]": str(islandKeywords),
+        "[*CoRISPlaceIslandOcean*]": str(islandOceanKeywords),
+        "[*KeywordShipName*]": str(shipName),
+        "[*GCMD_PlaceKeyword]": str(gcmdKeyword),
+        "[*UUID*]": str(myUUID),
+    }
+
     print(myDict)
 
     for entry in myDict:
-        templateText = templateText.replace(entry,myDict[entry])
+        templateText = templateText.replace(entry, myDict[entry])
 
-    findThis = '[[][*].*[*][]]'
+    findThis = "[[][*].*[*][]]"
     thingsToReplace = re.findall(findThis, templateText)
     sortedList = []
     [sortedList.append(x) for x in thingsToReplace if x not in sortedList]
@@ -315,32 +376,36 @@ def editTemplateForReal(myTemplate, surveyDate,islandKeywords,islandOceanKeyword
         print(x)
     return templateText
 
+
 def generateFilename(row):
     """
     This function is currently unused.
     """
-    myFilename = (f"{row['filename']}")
-    #print("Here is the autogenerated filename: " + myFilename)
-    updatedFilename = input("If you'd like, enter a different filename now (without the extension). Otherwise, hit ENTER.\n")
-    if len(updatedFilename)>0:
+    myFilename = f"{row['filename']}"
+    # print("Here is the autogenerated filename: " + myFilename)
+    updatedFilename = input(
+        "If you'd like, enter a different filename now (without the extension). Otherwise, hit ENTER.\n"
+    )
+    if len(updatedFilename) > 0:
         myFilename = updatedFilename
-        #print("Filename updated successfully.\n")
+        # print("Filename updated successfully.\n")
     return myFilename
 
+
 def convert_size(size_bytes):
-    myFileSize = round(size_bytes/(1024.0 * 1024.0))
+    myFileSize = round(size_bytes / (1024.0 * 1024.0))
     sizeString = str(myFileSize)
     return sizeString
+
 
 def getFileSize(data):
     fileSize = str(data).split(",")
     fileSize = fileSize[2]
-    fileSize = fileSize.replace("'","")
-    fileSize = fileSize.replace("]","")
+    fileSize = fileSize.replace("'", "")
+    fileSize = fileSize.replace("]", "")
     fileSize = fileSize.strip()
     fileSize = convert_size(int(fileSize))
     return fileSize
-
 
 
 def oneRecordPerFile():
@@ -351,10 +416,10 @@ def oneRecordPerFile():
     file - Current file in iteration of the myFileList list of mnf files.
 
     mnfData - This is the string extracted from the current file in the
-        iteration of the myFileList list. 
+        iteration of the myFileList list.
 
     siteName - Site name code extracted from the filename listed in each
-        mnf file. This will be used to extract relevant data from the 
+        mnf file. This will be used to extract relevant data from the
         data csv file.
 
     """
@@ -365,13 +430,13 @@ def oneRecordPerFile():
     print("\nTHIS IS YOUR FILE LIST: " + str(myFileList))
     for file in myFileList:
         dataCount = 0
-        #print("STARTING WITH THIS FILE: " + str(file))
+        # print("STARTING WITH THIS FILE: " + str(file))
         mnfDataList = parseMnf(file)
         listLength = str(len(mnfDataList))
         print("YOU SHOULD SEE THIS NUMBER OF RECORDS: " + listLength)
-        #print("HERE IS YOUR MNF DATA: " + str(mnfDataList))
+        # print("HERE IS YOUR MNF DATA: " + str(mnfDataList))
         for mnfData in mnfDataList:
-            dataCount +=1
+            dataCount += 1
             myTemplate = ""
             if "fixed" in str(mnfData).lower():
                 print("FIXED RECORD FOUND")
@@ -381,101 +446,133 @@ def oneRecordPerFile():
                 print("STRS RECORD FOUND")
                 myLookup = strsLookup
                 myTemplate = "xmlTemplate_StRS.xml"
-            
+
             print("\nCURRENTLY WORKING ON FILE NUMBER: " + str(dataCount))
             csvFileName = getFileName(mnfData)
-            #print("FOUND THIS FILE: " + str(csvFileName))
-            
+            # print("FOUND THIS FILE: " + str(csvFileName))
+
             if "NCRMP" not in csvFileName:
-                csvFileName = csvFileName.replace("CRMP","NCRMP")
+                csvFileName = csvFileName.replace("CRMP", "NCRMP")
 
             siteName = getSiteName(str(csvFileName))
-            #print("HERE IS YOUR SITENAME: "+ siteName)
+            # print("HERE IS YOUR SITENAME: "+ siteName)
             fileSize = getFileSize(mnfData)
 
-            missionStart = getDateRange(myLookup,"min")
+            missionStart = getDateRange(myLookup, "min")
             startString = str(missionStart).split(" ")
             missionStart = startString[0]
-            missionEnd = getDateRange(myLookup,"max")
+            missionEnd = getDateRange(myLookup, "max")
             endString = str(missionEnd).split(" ")
             missionEnd = endString[0]
 
             try:
-                rowNumber = getRowNumber(siteName,myLookup,'SITE')
+                rowNumber = getRowNumber(siteName, myLookup, "SITE")
             except:
                 rowNumber = False
-            print("HERE IS YOUR ROW NUMBER: " +str(rowNumber))
-            print("HERE IS YOUR SITE NAME: " +str(siteName))
+            print("HERE IS YOUR ROW NUMBER: " + str(rowNumber))
+            print("HERE IS YOUR SITE NAME: " + str(siteName))
             print("HERE IS YOUR LOOKUP FILE: " + str(myLookup))
             if rowNumber is not False:
-                mission = getData(rowNumber,myLookup,"MISSION")
-                print("FOUND THIS MISSION: " +str(mission))
-                numberOfImages = getData(rowNumber,myLookup,"NUMBER OF IMAGES")
-                print("FOUND THIS number of images: " +str(numberOfImages))
-                island = getData(rowNumber,myLookup,"ISLAND")
-                print("FOUND THIS ISLAND: " +str(island))
-                surveyDate = getData(rowNumber,myLookup,"DATE")
-                print("FOUND THIS SURVEY DATE: " +str(surveyDate))
+                mission = getData(rowNumber, myLookup, "MISSION")
+                print("FOUND THIS MISSION: " + str(mission))
+                numberOfImages = getData(rowNumber, myLookup, "NUMBER OF IMAGES")
+                print("FOUND THIS number of images: " + str(numberOfImages))
+                island = getData(rowNumber, myLookup, "ISLAND")
+                print("FOUND THIS ISLAND: " + str(island))
+                surveyDate = getData(rowNumber, myLookup, "DATE")
+                print("FOUND THIS SURVEY DATE: " + str(surveyDate))
 
                 dateString = str(surveyDate)
                 count = len(dateString)
-                year = str(surveyDate[count-4])+str(surveyDate[count-3])+str(surveyDate[count-2])+str(surveyDate[count-1])
+                year = (
+                    str(surveyDate[count - 4])
+                    + str(surveyDate[count - 3])
+                    + str(surveyDate[count - 2])
+                    + str(surveyDate[count - 1])
+                )
+
+                regionName = getData(rowNumber, myLookup, "REGION")
+
                 fixedOrRandom = ""
                 print("THIS IS THE FILENAME YOU're LOOKING FOR: " + str(csvFileName))
+
                 if "fixed" in str(csvFileName).lower():
                     fixedOrRandom = "_Fixed"
                 elif "strs" in str(csvFileName).lower():
                     fixedOrRandom = "_StRS"
-                parentRecordID = mission + "_" + year + fixedOrRandom + "_sfm"
 
-                eastLon = getData(rowNumber,myLookup,"LONGITUDE")
-                westLon = getData(rowNumber,myLookup,"LONGITUDE")
-                southLat = getData(rowNumber,myLookup,"LATITUDE")
-                northLat = getData(rowNumber,myLookup,"LATITUDE")
+                # 2. Build the Parent Record ID
+                if mission == "SE2406":
+                    parentRecordID = (
+                        mission + "_" + year + "_" + regionName + fixedOrRandom + "_sfm"
+                    )
+                else:
+                    parentRecordID = mission + "_" + year + fixedOrRandom + "_sfm"
+
+                eastLon = getData(rowNumber, myLookup, "LONGITUDE")
+                westLon = getData(rowNumber, myLookup, "LONGITUDE")
+                southLat = getData(rowNumber, myLookup, "LATITUDE")
+                northLat = getData(rowNumber, myLookup, "LATITUDE")
             else:
-                myDict = {csvFileName:"rowNumber issue"}
+                myDict = {csvFileName: "rowNumber issue"}
                 print("Skipped processing on this file: " + str(csvFileName))
                 badFileList.append(myDict)
             try:
-                dictionaryRowNumber = getRowNumber(island,dictionaryFileName,'Island_Code')
+                dictionaryRowNumber = getRowNumber(
+                    island, dictionaryFileName, "Island_Code"
+                )
             except:
                 dictionaryRowNumber = False
 
             if dictionaryRowNumber is not False:
-                islandKeywords = getData(dictionaryRowNumber,dictionaryFileName,'CoRIS Region')
-                islandOceanKeywords = getData(dictionaryRowNumber,dictionaryFileName,'CoRIS Ocean')
-                islandFullName = getData(dictionaryRowNumber,dictionaryFileName,'ISLAND')
-                gcmdKeyword = getData(dictionaryRowNumber,dictionaryFileName, 'GCMD Keyword')
+                islandKeywords = getData(
+                    dictionaryRowNumber, dictionaryFileName, "CoRIS Region"
+                )
+                islandOceanKeywords = getData(
+                    dictionaryRowNumber, dictionaryFileName, "CoRIS Ocean"
+                )
+                islandFullName = getData(
+                    dictionaryRowNumber, dictionaryFileName, "ISLAND"
+                )
+                gcmdKeyword = getData(
+                    dictionaryRowNumber, dictionaryFileName, "GCMD Keyword"
+                )
             else:
-                myDict = {csvFileName:"dictionaryRowNumber issue"}
+                myDict = {csvFileName: "dictionaryRowNumber issue"}
                 print("Skipped processing on this file: " + str(csvFileName))
                 badFileList.append(myDict)
-            
+
             try:
-                islandRowNumber = getRowNumber(island,islandLookup,'Island_Code')
+                islandRowNumber = getRowNumber(island, islandLookup, "Island_Code")
             except:
                 islandRowNumber = False
 
             if islandRowNumber is not False:
-                regionName = getData(islandRowNumber,islandLookup,'Region_Name')
-                regionCode = getData(islandRowNumber,islandLookup, 'Region_Code')
+                regionName = getData(islandRowNumber, islandLookup, "Region_Name")
+                regionCode = getData(islandRowNumber, islandLookup, "Region_Code")
             else:
-                myDict = {csvFileName:"islandRowNumber issue"}
+                myDict = {csvFileName: "islandRowNumber issue"}
                 print("Skipped processing on this file: " + str(csvFileName))
                 badFileList.append(myDict)
-            
-            regionKeywordLookupTable = 'Region_Keywords.csv'
+
+            regionKeywordLookupTable = "Region_Keywords.csv"
 
             try:
-                regionNumber = getRowNumber(regionCode,regionKeywordLookupTable,'Region_Code')
+                regionNumber = getRowNumber(
+                    regionCode, regionKeywordLookupTable, "Region_Code"
+                )
             except:
                 regionNumber = False
 
             if regionNumber is not False:
-                regionCountryKeyword = getData(regionNumber, regionKeywordLookupTable, 'CoRIS Country')
-                regionOceanKeyword = getData(regionNumber, regionKeywordLookupTable, 'CoRIS Ocean')
+                regionCountryKeyword = getData(
+                    regionNumber, regionKeywordLookupTable, "CoRIS Country"
+                )
+                regionOceanKeyword = getData(
+                    regionNumber, regionKeywordLookupTable, "CoRIS Ocean"
+                )
             else:
-                myDict = {csvFileName:"regionNumber issue"}
+                myDict = {csvFileName: "regionNumber issue"}
                 print("Skipped processing on this file: " + str(csvFileName))
                 badFileList.append(myDict)
 
@@ -483,21 +580,23 @@ def oneRecordPerFile():
             print("MISSION CODE: " + str(missionCode))
             shipLookup = "shipLookup.csv"
             try:
-                missionLookupNumber = getRowNumber(missionCode, shipLookup,'Ship_Two_letter_code')
+                missionLookupNumber = getRowNumber(
+                    missionCode, shipLookup, "Ship_Two_letter_code"
+                )
             except:
                 missionLookupNumber = False
 
             if missionLookupNumber is not False:
-                shipName = getData(missionLookupNumber, shipLookup,'Ship Keyword')
+                shipName = getData(missionLookupNumber, shipLookup, "Ship Keyword")
             else:
-                myDict = {csvFileName:"shipName lookup issue"}
+                myDict = {csvFileName: "shipName lookup issue"}
                 print("Skipped processing on this file: " + str(csvFileName))
                 badFileList.append(myDict)
 
-            #tarFileName = str(file)
-            #tarFileName = tarFileName.replace(".mnf","")
-            
-            myUUID= getUUID(csvFileName)
+            # tarFileName = str(file)
+            # tarFileName = tarFileName.replace(".mnf","")
+
+            myUUID = getUUID(csvFileName)
 
             print("Here are your variables: ")
             print(str(rowNumber))
@@ -505,10 +604,41 @@ def oneRecordPerFile():
             print(str(regionNumber))
             print(str(islandRowNumber))
             print(str(dictionaryRowNumber))
-            if rowNumber is not False and missionLookupNumber is not False and regionNumber is not False and islandRowNumber is not False and dictionaryRowNumber is not False:
+            if (
+                rowNumber is not False
+                and missionLookupNumber is not False
+                and regionNumber is not False
+                and islandRowNumber is not False
+                and dictionaryRowNumber is not False
+            ):
                 # Call the function that edits the xml template with all the gathered information
-                xmlText = editTemplateForReal(myTemplate, surveyDate,islandKeywords,islandOceanKeywords,missionStart,missionEnd,siteName,eastLon,westLon,northLat,southLat,islandFullName,regionName,fileSize,csvFileName,year,parentRecordID,regionCountryKeyword,regionOceanKeyword,shipName,currentDate,csvFileName,gcmdKeyword,myUUID)
-                writeXml(xmlText,csvFileName)
+                xmlText = editTemplateForReal(
+                    myTemplate,
+                    surveyDate,
+                    islandKeywords,
+                    islandOceanKeywords,
+                    missionStart,
+                    missionEnd,
+                    siteName,
+                    eastLon,
+                    westLon,
+                    northLat,
+                    southLat,
+                    islandFullName,
+                    regionName,
+                    fileSize,
+                    csvFileName,
+                    year,
+                    parentRecordID,
+                    regionCountryKeyword,
+                    regionOceanKeyword,
+                    shipName,
+                    currentDate,
+                    csvFileName,
+                    gcmdKeyword,
+                    myUUID,
+                )
+                writeXml(xmlText, csvFileName, regionName)
             elif rowNumber == False:
                 print("rowNumber is False!!!!!!!!!!!!!")
             elif missionLookupNumber == False:
@@ -521,28 +651,40 @@ def oneRecordPerFile():
                 print("dictionaryRowNumber is False!!!!!!!!!!!!")
 
 
-def writeXml(xmlData,xmlFileName):
-    # Write the actual xml file based on the data gathered above.
-    xmlFileName = str(xmlFileName).replace(".tar","")
-    xmlFileName = str(xmlFileName).replace(".csv","")
+def writeXml(xmlData, xmlFileName, regionName):
+    # 1. Setup folder based on region
+    output_folder = "Completed_" + regionName
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
+
+    # 2. Clean the filename
+    xmlFileName = str(xmlFileName).replace(".tar", "")
+    xmlFileName = str(xmlFileName).replace(".csv", "")
     xmlFileName = xmlFileName + ".xml"
-    with open(xmlFileName, 'w') as f:
+
+    # 3. Create final path inside the folder
+    output_path = os.path.join(output_folder, xmlFileName)
+
+    # 4. Save the file
+    with open(output_path, "w") as f:
         f.write(xmlData)
-    
-def getData(rowNumber,csvFileName,columnName):
+
+
+def getData(rowNumber, csvFileName, columnName):
     df = pd.read_csv(csvFileName)
     myVariable = df.loc[[rowNumber], [columnName]]
     variableData = myVariable.iloc[0][columnName]
-    #print(variableData)
+    # print(variableData)
     return variableData
 
-def getRowNumber(dataInHand,csvFileName,columnOfInterest):
+
+def getRowNumber(dataInHand, csvFileName, columnOfInterest):
     """
     Gets the row number where the attribute dataInHand is equal to the value in the column specified
     in the columnOfInterest variable.
 
     dataInHand: String (unless cast otherwise). Passed into the function. This is the data we are using
-                basically as a key to look for other values. 
+                basically as a key to look for other values.
     csvFilename: String. This is the name of the file that the function will open and scan.
 
     columnOfInterest: String. This is the column name that the function will look through to match
@@ -560,11 +702,12 @@ def getRowNumber(dataInHand,csvFileName,columnOfInterest):
         rowNumber = False
         return rowNumber
 
+
 def getFileName(mnfData):
     """
     Gets the filename of the CSV file from the mnf data file.
     """
-    extensionList = ["tar","csv","dat"]
+    extensionList = ["tar", "csv", "dat"]
     for extension in extensionList:
         if extension == "csv":
             regex = ".*[.]csv"
@@ -573,36 +716,39 @@ def getFileName(mnfData):
         elif extension == "dat":
             regex = ".*[.]dat"
         for item in mnfData:
-            #print("\n\nLooking through this data: " + str(item))
-            filename = re.findall(regex,item)
-            if len(filename) >0 :
-                filename = str(filename).replace("[", "").replace("'", "").replace("]","")
-                #print(str(filename))
+            # print("\n\nLooking through this data: " + str(item))
+            filename = re.findall(regex, item)
+            if len(filename) > 0:
+                filename = (
+                    str(filename).replace("[", "").replace("'", "").replace("]", "")
+                )
+                # print(str(filename))
                 return filename
 
 
 def getSiteName(fileName):
-    splitsies = fileName.split('_', 8)
+    splitsies = fileName.split("_", 8)
     siteName = str(splitsies[7])
     return siteName
 
+
 def parseMnf(mnfFile):
-    #df = pd.read_csv(mnfFile)
-    # Open file 
+    # df = pd.read_csv(mnfFile)
+    # Open file
     rowList = []
     with open(mnfFile) as file_obj:
-        # Create reader object by passing the file 
+        # Create reader object by passing the file
         # object to reader method
         reader_obj = csv.reader(file_obj)
-    # Iterate over each row in the csv 
-    # file using reader object
+        # Iterate over each row in the csv
+        # file using reader object
         for row in reader_obj:
             rowList.append(row)
     return rowList
-    
+
+
 def setup():
-    """_summary_
-    """
+    """_summary_"""
     print("1. Run the application.")
     print("2. Exit the program.")
     selection = input("Enter your selection now:\n")
@@ -614,7 +760,8 @@ def setup():
     elif selection != "1" and selection != "2" and selection != "3":
         print("Please follow directions")
         setup()
-        
+
+
 # Main goes here I guess.
 setup()
 print("\n")
