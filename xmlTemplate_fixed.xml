@@ -225,8 +225,6 @@
 			The photographs described in this dataset were collected using a Structure from Motion (SfM) approach during in-water surveys throughout the U.S. Pacific since 2019. Surveys were funded by NOAA Coral Reef Conservation Program (CRCP) and conducted by the NOAA Fisheries, Ecosystem Sciences Division (ESD). Survey sites consisted of sites previously established by collaborators from Scripps Institution of Oceanography and new sites established in 2019 by NOAA ESD. All sites ranged from 9-16 meters in depth and surveys covered approximately 100 m2 of reef habitat. 
             
             Sites were photographed by divers swimming approximately 1 m off the seafloor with high overlap between images to produce SfM products. The data extracted from this imagery provides information on juvenile and adult taxonomic identification, abundance, planar area across the [*Region*] in [*Year*], and can be used to track the fate of individual coral colonies over time. This data is archived separately within NCEI.
-            
-            This archival package contains imagery from [*SiteName*] that was obtained around [*IslandName*] on [*SurveyDate*].
 
  </gco:CharacterString>
          </gmd:abstract>

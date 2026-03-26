@@ -491,7 +491,7 @@ def oneRecordPerFile():
                     + str(surveyDate[count - 1])
                 )
 
-                regionName = getData(rowNumber, myLookup, "REGION")
+                regionName = getData(rowNumber, myLookup, "REGION").replace(" ", "_")
 
                 fixedOrRandom = ""
                 print("THIS IS THE FILENAME YOU're LOOKING FOR: " + str(csvFileName))
