@@ -466,7 +466,8 @@ def oneRecordPerFile():
             missionEnd = endString[0]
 
             try:
-                rowNumber = getRowNumber(siteName, myLookup, "SITE")
+                # We pass csvFileName so the function knows to dual-match the Mission!
+                rowNumber = getRowNumber(siteName, myLookup, "SITE", str(csvFileName))
             except:
                 rowNumber = False
             print("HERE IS YOUR ROW NUMBER: " + str(rowNumber))
@@ -678,29 +679,32 @@ def getData(rowNumber, csvFileName, columnName):
     return variableData
 
 
-def getRowNumber(dataInHand, csvFileName, columnOfInterest):
+def getRowNumber(dataInHand, csvFileName, columnOfInterest, targetFilename=None):
     """
-    Gets the row number where the attribute dataInHand is equal to the value in the column specified
-    in the columnOfInterest variable.
-
-    dataInHand: String (unless cast otherwise). Passed into the function. This is the data we are using
-                basically as a key to look for other values.
-    csvFilename: String. This is the name of the file that the function will open and scan.
-
-    columnOfInterest: String. This is the column name that the function will look through to match
-                      the dataInHand variable.
-
-    df: Pandas dataframe. Created by reading the file specified in csvFileName.
-
-    rowNumber: int. The row number where the dataInHand variable is equal to the value in the columnOfInterest.
+    Gets the row number where dataInHand equals the columnOfInterest.
+    If targetFilename is provided, it does a dual-match to ensure the MISSION
+    in the CSV matches the mission in the file being processed (If you give it the csvFileName (which contains the mission name like MP2011), it will filter the results so the MISSION column matches the file name).
     """
+    import pandas as pd
+
     df = pd.read_csv(csvFileName)
-    rowNumber = df[df[columnOfInterest] == dataInHand].index[0]
-    if rowNumber.size != 0:
-        return rowNumber
-    else:
-        rowNumber = False
-        return rowNumber
+
+    # Find all rows that match the primary target (e.g., SITE == OCC-OAH-005)
+    matches = df[df[columnOfInterest] == dataInHand]
+
+    if matches.empty:
+        return False
+
+    # If we passed the filename being processed, do the dual-match for the Mission
+    if targetFilename:
+        for index, row in matches.iterrows():
+            mission_in_row = str(row.get("MISSION", ""))
+            # If the mission (e.g., "MP2011") is inside the filename, it's the exact right row
+            if mission_in_row and mission_in_row in targetFilename:
+                return index
+
+    # Fallback for other lookups (like Island or Region) that only need a single match
+    return matches.index[0]
 
 
 def getFileName(mnfData):
