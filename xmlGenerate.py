@@ -192,23 +192,26 @@ def getLonLat(columnName, fileName, minOrMax):
         return "INVALID INPUT"
 
 
-def getDateRange(file, minOrMax):
-    """This function is passed a filepath string. It then converts that file into a dataframe.
-    once that dataframe is converted, it takes the date column from the dataframe and converts
-    all values into datetime objects. Then it grabs the converted date column and gets the
-    minimum and maximum values. Once those are identified it converts them back to string
-    values and combines them to create a range.
-
-    Args:
-        file (string): string containing a file path extracted from a list of all files in
-        the user's current directory.
-
-    Returns:
-        string: This dateRange string contains two dateTimes converted to strings. Basically these
-        are the earliest and latest dates found in the date column of the file passed to this function.
+def getDateRange(file, minOrMax, targetFilename=None):
     """
+    Reads a CSV and calculates the min/max dates.
+    If targetFilename is provided, it filters the data to only include rows
+    where the MISSION matches the current file being processed.
+    """
+    import pandas as pd
 
     df = pd.read_csv(file)
+
+    # If we passed a filename, filter the dataframe to ONLY the current mission
+    if targetFilename and "MISSION" in df.columns:
+        # Keep rows where the MISSION string (e.g., 'MP2011') is inside the filename
+        mask = df["MISSION"].apply(
+            lambda x: str(x) in targetFilename if pd.notnull(x) else False
+        )
+        # Only apply the filter if we actually found a match
+        if mask.any():
+            df = df[mask]
+
     df["DATE"] = pd.to_datetime(df["DATE"])
     column = df["DATE"]
     max_value = column.max()
@@ -216,6 +219,7 @@ def getDateRange(file, minOrMax):
 
     dateRange = str(min_value) + " - " + str(max_value)
     del df
+
     if minOrMax == "min":
         return min_value
     elif minOrMax == "max":
@@ -458,10 +462,12 @@ def oneRecordPerFile():
             # print("HERE IS YOUR SITENAME: "+ siteName)
             fileSize = getFileSize(mnfData)
 
-            missionStart = getDateRange(myLookup, "min")
+            # Pass the filename so the function filters by the specific Mission!
+            missionStart = getDateRange(myLookup, "min", str(csvFileName))
             startString = str(missionStart).split(" ")
             missionStart = startString[0]
-            missionEnd = getDateRange(myLookup, "max")
+
+            missionEnd = getDateRange(myLookup, "max", str(csvFileName))
             endString = str(missionEnd).split(" ")
             missionEnd = endString[0]
 
