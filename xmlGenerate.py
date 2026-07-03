@@ -403,13 +403,18 @@ def convert_size(size_bytes):
 
 
 def getFileSize(data):
-    fileSize = str(data).split(",")
-    fileSize = fileSize[2]
-    fileSize = fileSize.replace("'", "")
-    fileSize = fileSize.replace("]", "")
-    fileSize = fileSize.strip()
-    fileSize = convert_size(int(fileSize))
-    return fileSize
+    try:
+        # The original developer's exact logic
+        fileSize = str(data).split(",")
+        fileSize = fileSize[2]
+        fileSize = fileSize.replace("'", "")
+        fileSize = fileSize.replace("]", "")
+        fileSize = fileSize.strip()
+        fileSize = convert_size(int(fileSize))
+        return fileSize
+    except Exception:
+        # Our safety net: if it's a dummy file, short string, or blank line, just return 0!
+        return "0"
 
 
 def oneRecordPerFile():
@@ -645,7 +650,7 @@ def oneRecordPerFile():
                     gcmdKeyword,
                     myUUID,
                 )
-                writeXml(xmlText, csvFileName, regionName)
+                writeXml(xmlText, csvFileName, regionName, mission, fixedOrRandom)
             elif rowNumber == False:
                 print("rowNumber is False!!!!!!!!!!!!!")
             elif missionLookupNumber == False:
@@ -658,21 +663,26 @@ def oneRecordPerFile():
                 print("dictionaryRowNumber is False!!!!!!!!!!!!")
 
 
-def writeXml(xmlData, xmlFileName, regionName):
-    # 1. Setup folder based on region
-    output_folder = "Completed_" + regionName
+def writeXml(xmlData, xmlFileName, regionName, mission, fixedOrRandom):
+    # 1. Clean up the batch type (removes any trailing underscores like "_StRS")
+    batch_type = fixedOrRandom.replace("_", "")
+
+    # 2. Setup folder based on your new format (mission_StRS_Region_yyyy_mm_dd)
+    date_stamp = datetime.datetime.today().strftime("%Y_%m_%d")
+    output_folder = f"{mission}_{batch_type}_{regionName}_{date_stamp}"
+
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    # 2. Clean the filename
+    # 3. Clean the filename
     xmlFileName = str(xmlFileName).replace(".tar", "")
     xmlFileName = str(xmlFileName).replace(".csv", "")
     xmlFileName = xmlFileName + ".xml"
 
-    # 3. Create final path inside the folder
+    # 4. Create final path inside the folder
     output_path = os.path.join(output_folder, xmlFileName)
 
-    # 4. Save the file
+    # 5. Save the file
     with open(output_path, "w") as f:
         f.write(xmlData)
 

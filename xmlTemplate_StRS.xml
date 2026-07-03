@@ -10,7 +10,7 @@
 		<gmd:MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="UTF8">UTF8</gmd:MD_CharacterSetCode>
 	</gmd:characterSet>
 	<gmd:parentIdentifier>
-		<gmx:Anchor xlink:href="[*parent metadata landing page link or DOI link*]" xlink:title="Parent Metadata">[*parent metadata ID*]</gmx:Anchor>
+		<gmx:Anchor xlink:href="https://data.noaa.gov/metaview/page?xml=NOAA/NESDIS/ncei/coral/iso/xml/[*parent metadata ID*].xml&amp;view=getDataView&amp;header=none" xlink:title="Parent Metadata">[*parent metadata ID*]</gmx:Anchor>
 	</gmd:parentIdentifier>
 	<gmd:hierarchyLevel>
 		<gmd:MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset">dataset</gmd:MD_ScopeCode>
@@ -1024,9 +1024,9 @@ Sites were imaged using underwater cameras along 3x20m (3x13m for sites deeper t
 										<gmd:CI_Contact>
 											<gmd:onlineResource>
 												<gmd:CI_OnlineResource>
-												<gmd:linkage>
-												<gmd:URL>[*parent metadata landing page link or DOI link*]</gmd:URL>
-												</gmd:linkage>
+													<gmd:linkage>
+														<gmd:URL>https://data.noaa.gov/waf/NOAA/NESDIS/ncei/coral/iso/xml/[*parent metadata ID*].xml</gmd:URL>
+													</gmd:linkage>
 												</gmd:CI_OnlineResource>
 											</gmd:onlineResource>
 										</gmd:CI_Contact>
@@ -1470,12 +1470,9 @@ The biological component of NCRMP in the Pacific provides a triennial ecological
 							<gmd:onLine>
 								<gmd:CI_OnlineResource>
 									<gmd:linkage>
-										<gmd:URL>
-											https://www.ncei.noaa.gov/access/ocean-exploration/video/?oerkey=[*FileIdentifier*]
-										</gmd:URL>
+										<gmd:URL>https://www.ncei.noaa.gov/access/ocean-exploration/video/?oerkey=[*FileIdentifier*]</gmd:URL>
 									</gmd:linkage>
 									<gmd:name>
-										<!--Check OER code based on metadata examples it looks like file name that they had in the template is the same as the file identifier-->
 										<gco:CharacterString>[*FileIdentifier*]</gco:CharacterString>
 									</gmd:name>
 									<gmd:description>
